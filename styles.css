@@ -1650,7 +1650,7 @@ button {
 .program__panelInner {
   box-sizing: content-box;
   padding: 78px 0 92px;
-  max-width: var(--container);
+  max-width: 1130px;
   margin-inline: auto;
   padding-inline: var(--pad);
 }
@@ -1850,9 +1850,6 @@ button {
 
 @media (min-width: 900px) {
   .audience__lead {
-    position: absolute;
-    right: -5px;
-    top: 0px;
     max-width: 325px;
   }
 }
@@ -2113,6 +2110,9 @@ button {
 .priceCard--ended .priceCard__ended {
   display: block;
 }
+#prices .priceCard.priceCard--ended{
+	border-color:rgba(255, 255, 255, 0.08);
+}
 
 .priceCard--ended .priceCard__btn--active {
   display: none;
@@ -2130,6 +2130,7 @@ button {
   transform: translateY(-2px);
   box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
 }
+
 
 .priceCard:not(.priceCard--ended):hover .priceCard__label:not(.priceCard__label--img),
 .priceCard:not(.priceCard--ended):focus-within .priceCard__label:not(.priceCard__label--img) {
@@ -4544,7 +4545,7 @@ button {
   }
 
   #program .program__panel {
-    margin-top: 54px;
+    margin-top: 15px;
     background:
       radial-gradient(700px 280px at 38% 18%, rgba(255, 255, 255, 0.045), transparent 72%),
       #05030c;
@@ -4584,20 +4585,22 @@ button {
   #audience .audience__body {
     width: min(970px, calc(100% - 48px));
     max-width: none;
+		margin: 0 auto;
     padding: 0;
   }
 
-  #audience .audience__title {
-    margin: 0;
-    font-size: clamp(76px, 7.64vw, 110px);
-  }
+	#audience .audience__title {
+		margin: 0 0 0 20px;
+		letter-spacing: -0.15rem;
+		font-size: clamp(76px, 7.64vw, 110px);
+	}
 
   #audience .audience__lead {
-    right: 0;
-    top: 6px;
+    /* right: 0;
+    top: 6px; */
     width: 325px;
     font-family: "Gilroy-Bold", "Gilroy", system-ui, sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     line-height: 1.2;
   }
@@ -4730,19 +4733,19 @@ button {
   }
 
   #audience .audience__head {
-    position: absolute;
-    left: 50%;
+		margin: 0 auto;
+		display: flex;
+		gap: 57px;
     top: 130px;
     width: 970px;
-    transform: translateX(-50%);
   }
 
   #audience .audience__body {
-    position: absolute;
+    /* position: absolute;
     left: 50%;
-    top: 265px;
+    top: 265px; */
     width: 970px;
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
   }
 
   #audience .audienceStage {
@@ -5093,7 +5096,6 @@ button {
     padding: 95px 38px 63px;
     border-radius: 13px;
     border-color: rgba(255, 255, 255, 0.88);
-    background: transparent;
     box-shadow: none;
   }
 
