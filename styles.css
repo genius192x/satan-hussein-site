@@ -618,7 +618,7 @@ button {
 }
 
 .hero .container {
-  --container: 1078px;
+  --container: 964px;
 }
 
 .hero__nav {
@@ -657,7 +657,7 @@ button {
 
 .hero__copy__wrap {
   display: grid;
-  gap: 14px;
+  gap: 3px;
 }
 
 .hero__title {
@@ -665,8 +665,8 @@ button {
   font-family: "Ekran", "Gilroy", system-ui, sans-serif;
   font-weight: 700;
   font-size: 170px;
-  line-height: 0.78;
-  letter-spacing: 0;
+  line-height: 0.75;
+  letter-spacing: -0.2rem;
   text-transform: lowercase;
   transform: rotate(2deg);
 }
@@ -676,11 +676,11 @@ button {
 }
 
 .hero__lead {
-  width: 360px;
-  margin: 0;
-  font-size: 22px;
-  font-weight: 800;
-  line-height: 1.14;
+	margin: 0 0 0 -3px;
+	font-size: 22px;
+	letter-spacing: -0.07rem;
+	font-weight: 800;
+	line-height: 1.16;
 }
 
 .hero__cta {
@@ -688,7 +688,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 42px;
+  margin-top: 46px;
 }
 
 .hero__btn {
@@ -696,19 +696,19 @@ button {
   height: 85px;
   margin-left: 56px;
   padding-inline: 28px;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .launch {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 467px;
-  height: 107px;
-  margin-top: -2px;
-  margin-left: -57px;
+	position: relative;
+	z-index: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 440px;
+	height: 107px;
+	margin-top: -5px;
+	margin-left: -47px;
 }
 
 .launch__ring {
@@ -722,19 +722,22 @@ button {
   position: relative;
   font-size: 22px;
   font-weight: 800;
+	letter-spacing: -0.11rem;
+
 }
 
 .hero__media {
   position: relative;
   z-index: 1;
   flex: 0 0 741px;
-  margin-top: -71px;
-  margin-left: -29px;
+  margin-top: -67px;
+  margin-left: -35px;
 }
 
 .hero__collage {
   width: 741px;
   max-width: none;
+	margin-top: -27px;
 }
 
 .hero__mediaNote {
@@ -1021,8 +1024,8 @@ button {
 }
 
 #about .collageStats__label--credits {
-  left: 495px;
-  top: 703px;
+  left: 616px;
+	top: 697px;
   right: auto;
   width: 124px;
   font-size: 28px;
@@ -1044,7 +1047,7 @@ button {
 #about .twoCol__copy {
   position: absolute;
   left: calc(50% + 91.5px);
-  top: 106px;
+  top: 118px;
   width: 379px;
 }
 
@@ -1067,7 +1070,7 @@ button {
 
 #about .twoCol__copy .lead {
   height: 55px;
-  margin-top: 15px;
+  margin-top: 3px;
   font-family: "Gilroy-Bold", "Gilroy", system-ui, sans-serif;
   font-size: 22px;
   font-weight: 700;
@@ -1076,7 +1079,7 @@ button {
 }
 
 #about .twoCol__copy .p {
-  margin-top: 20px;
+  margin-top: 18px;
   font-family: "Gilroy", system-ui, sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -1089,12 +1092,13 @@ button {
 }
 
 #about .tape {
-  position: absolute;
-  left: -17px;
-  top: 359px;
-  width: 437px !important;
-  height: 138px !important;
-  transform: rotate(0.8deg);
+	position: absolute;
+	left: -16px;
+	top: 348px;
+	z-index: 2;
+	width: 437px !important;
+	height: 137px !important;
+	transform: rotate(0.8deg);
 }
 
 #about .tape__bg {
@@ -1104,15 +1108,15 @@ button {
 }
 
 #about .tape__text {
-  left: 65px;
-  top: 55px;
-  width: 222px;
-  font-size: 28px;
-  line-height: 35px;
-  letter-spacing: 0.56px;
-  white-space: nowrap;
-  transform: rotate(2deg);
-  rotate: none;
+	left: 83px;
+	top: 54px;
+	width: 222px;
+	font-size: 28px;
+	line-height: 35px;
+	letter-spacing: 0.56px;
+	white-space: nowrap;
+	transform: rotate( 1deg);
+	rotate: none;
 }
 
 #about .ovals {
@@ -1129,46 +1133,46 @@ button {
 }
 
 #about .oval-bittuev {
-  background-image: url("img/about-oval-bittuev-figma.svg");
-  left: 105px;
-  top: 0;
-  right: auto;
-  width: 251px;
-  height: 86px;
-  rotate: none;
-  transform: none;
+	background-image: url(img/about-oval-bittuev-figma.svg);
+	left: 105px;
+	top: 22px;
+	right: auto;
+	width: 260px;
+	height: 64px;
+	rotate: none;
+	transform: none;
 }
 
 #about .oval-mayot {
   background-image: url("img/about-oval-mayot-figma.svg");
   left: 4px;
-  top: 87px;
+  top: 80px;
   right: auto;
   width: 282px;
   height: 67px;
-  rotate: none;
+  rotate: 3deg;
   transform: none;
 }
 
 #about .oval-ram {
-  background-image: url("img/about-oval-ram-figma.svg");
-  left: 142px;
-  top: 143px;
-  right: auto;
-  width: 250px;
-  height: 72px;
-  rotate: none;
-  transform: none;
+	background-image: url(img/about-oval-ram-figma.svg);
+	left: 144px;
+	top: 143px;
+	right: auto;
+	width: 250px;
+	height: 72px;
+	rotate: -6deg;
+	transform: none;
 }
 
 #about .oval-obla {
   background-image: url("img/about-oval-obla-figma.svg");
   left: 21px;
-  top: 207px;
+  top: 205px;
   right: auto;
   width: 302px;
   height: 68px;
-  rotate: none;
+  rotate: -5deg;
   transform: none;
 }
 
@@ -1187,29 +1191,32 @@ button {
 }
 
 #about .oval-bittuev .oval__text {
-  top: 51px;
-  left: 35px;
-  transform: rotate(1deg);
+	top: 22px;
+	left: 15px;
+	transform: rotate(1deg);
 }
 
+
 #about .oval-mayot .oval__text {
-  top: 25px;
-  left: 35px !important;
-  transform: none;
+	top: 23px;
+	left: 28px !important;
+	transform: none;
+	rotate: -3deg;
 }
 
 #about .oval-ram .oval__text {
-  top: 31px;
-  left: 65px;
-  width: 120px;
-  transform: rotate(-1deg);
+	top: 26px;
+	left: 62px;
+	width: 120px;
+	transform: rotate(5deg);
 }
 
 #about .oval-obla .oval__text {
-  top: 30px;
-  left: 63px;
+  top: 24px;
+  left: 69px;
   width: 165px;
   transform: none;
+	rotate: 6deg;
 }
 
 /* Video block */
@@ -2977,6 +2984,7 @@ button {
   .hero__title {
     font-size: 90px;
     line-height: 0.71;
+		letter-spacing: -0.02em;
     text-align: left;
     transform: rotate(1deg);
   }
