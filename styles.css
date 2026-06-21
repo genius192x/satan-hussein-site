@@ -628,9 +628,12 @@ button {
   align-items: center;
   justify-content: flex-start;
   gap: 61px;
+	top: -29px;
+	left: -48px;
   min-height: 39px;
   margin-top: 126px;
-  font-size: 13px;
+	letter-spacing: -0.05em;
+  font-size: 15px;
   font-weight: 800;
   line-height: 1;
   text-transform: lowercase;
@@ -692,7 +695,7 @@ button {
 }
 
 .hero__btn {
-  width: 281px;
+  width: 285px;
   height: 85px;
   margin-left: 56px;
   padding-inline: 28px;
@@ -1621,13 +1624,13 @@ button {
   display: grid;
   gap: 18px;
   align-items: end;
-  max-width: var(--container);
+  max-width: 858px;
   margin-inline: auto;
   padding-inline: var(--pad);
 }
 
 .program__title {
-  rotate: -1deg;
+  rotate: -2deg;
 }
 
 .program__lead {
@@ -4051,7 +4054,7 @@ button {
   position: absolute !important;
   z-index: 3 !important;
   left: calc(8.33% + 116px) !important;
-  top: 140px;
+  top: 155px;
   width: 485px;
 }
 
@@ -4070,7 +4073,7 @@ button {
   width: 485px;
   height: 55px;
   max-width: none;
-  margin: 15px 0 0;
+  margin: 0px 0 0;
   font-family: "Gilroy-Bold", "Gilroy", system-ui, sans-serif;
   font-size: 22px;
   font-weight: 700;
@@ -4081,7 +4084,7 @@ button {
 #course .course__tape {
   position: absolute;
   left: -94px;
-  top: 191px;
+  top: 175px;
   width: 444px;
   height: 124px;
   background: url("img/figma-course-tape-red-desktop.png") center / 441px 110px no-repeat;
@@ -4089,8 +4092,8 @@ button {
 }
 
 #course .course__tapeText {
-  left: 77px;
-  top: 48px;
+  left: 78px;
+  top: 47px;
   right: auto;
   bottom: auto;
   display: block;
@@ -4105,31 +4108,31 @@ button {
 }
 
 #course .course__list {
-  position: absolute;
-  left: -2px;
-  top: 314px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  list-style: none;
-  width: 342px;
-  max-width: none;
-  margin: 0;
-  padding: 0 0 0 25px;
-  font-family: "Gilroy", system-ui, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: -0.75px;
+	position: absolute;
+	left: -4px;
+	top: 299px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style: none;
+	width: 360px;
+	max-width: none;
+	margin: 0;
+	padding: 0 0 0 25px;
+	font-family: "Gilroy", system-ui, sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: -0.75px;
 }
 
 #course .course__listRail {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 6px;
-  height: 215px;
-  background: url("img/figma-course-list-line-desktop.svg") center / 6px 215px no-repeat;
+	position: absolute;
+	left: 22px;
+	top: 9px;
+	width: 6px;
+	height: 212px;
+	background: url(img/figma-course-list-line-desktop.svg) center / 6px 215px no-repeat;
 }
 
 #course .course__list li {
@@ -4144,41 +4147,41 @@ button {
 }
 
 #course .course__certificate {
-  position: absolute;
-  left: -155px;
-  top: 534px;
-  display: block;
-  width: 510px;
-  height: 133px;
-  max-width: none;
-  padding: 0;
-  background: url("img/figma-course-tape-black-desktop.png") center / 508px 125px no-repeat;
-  transform: rotate(-0.87deg);
+	position: absolute;
+	left: -37px;
+	top: 500px;
+	display: block;
+	width: 510px;
+	height: 133px;
+	max-width: none;
+	padding: 0;
+	background: url(img/figma-course-tape-black-desktop.png) center / 508px 125px no-repeat;
+	transform: rotate(-0.87deg);
 }
 
 #course .course__certificatePlus {
-  position: absolute;
-  left: 14px;
-  top: 24px;
-  width: 94px;
-  height: 98px;
-  max-width: none;
-  transform: rotate(0.2deg);
+	position: absolute;
+	left: -65px;
+	top: -22px;
+	width: 134px;
+	height: 137px;
+	max-width: none;
+	transform: rotate(0.2deg);
 }
 
 #course .course__certificateText {
-  position: absolute;
-  left: 96px;
-  top: 55px;
-  width: 365px;
-  margin: 0;
-  font-family: "Gilroy", system-ui, sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: -0.75px;
-  color: #fdfdfd;
-  transform: rotate(-2deg);
+	position: absolute;
+	left: 76px;
+	top: 46px;
+	width: 315px;
+	margin: 0;
+	font-family: "Gilroy", system-ui, sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: -0.75px;
+	color: #fdfdfd;
+	transform: rotate(1deg);
 }
 
 #course .course__art {
@@ -4222,17 +4225,17 @@ button {
 }
 
 #course .course__label--days {
-  left: 347px;
-  top: 569px;
-  width: 289px;
-  transform: rotate(-4.05deg);
+	left: 347px;
+	top: 580px;
+	width: 289px;
+	transform: rotate(0);
 }
 
 #course .course__label--modules {
-  left: 419px;
-  top: 710px;
-  width: 208px;
-  transform: none;
+	left: 419px;
+	top: 710px;
+	width: 208px;
+	transform: rotate(-2deg);
 }
 
 #course .course__foot {
@@ -4529,6 +4532,7 @@ button {
   #program .program__title {
     font-size: clamp(76px, 7.64vw, 110px);
     line-height: 0.82;
+		letter-spacing: -0.15rem;
   }
 
   #program .program__lead {
