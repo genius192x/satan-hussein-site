@@ -640,7 +640,67 @@ button {
 }
 
 .hero__navLink {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
   white-space: nowrap;
+}
+
+.hero__navLink::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  width: var(--nav-hover-w);
+  height: var(--nav-hover-h);
+  background: var(--nav-hover-img) center / contain no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.92);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+
+.hero__navLink:hover::before,
+.hero__navLink:focus-visible::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.hero__navLink[href="#about"] {
+  --nav-hover-img: url("img/nav/about.svg");
+  --nav-hover-w: 132px;
+  --nav-hover-h: 48px;
+}
+
+.hero__navLink[href="#studio"] {
+  --nav-hover-img: url("img/nav/studio.svg");
+  --nav-hover-w: 95px;
+  --nav-hover-h: 55px;
+}
+
+.hero__navLink[href="#course"] {
+  --nav-hover-img: url("img/nav/course.svg");
+  --nav-hover-w: 101px;
+  --nav-hover-h: 56px;
+}
+
+.hero__navLink[href="#prices"] {
+  --nav-hover-img: url("img/nav/prices.svg");
+  --nav-hover-w: 73px;
+  --nav-hover-h: 57px;
+}
+
+.hero__navLink[href="#reviews"] {
+  --nav-hover-img: url("img/nav/reviews.svg");
+  --nav-hover-w: 111px;
+  --nav-hover-h: 113px;
+}
+
+.hero__navLink[href="#contacts"] {
+  --nav-hover-img: url("img/nav/contancts.svg");
+  --nav-hover-w: 100px;
+  --nav-hover-h: 42px;
 }
 
 .hero__grid {
@@ -1643,7 +1703,7 @@ button {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
-  background: url("img/course-content/page.svg") center 70% / cover no-repeat;
+  background: url("img/course-content/Page-10.png") center 70% / cover no-repeat;
   max-width: 1440px;
 }
 
@@ -1942,6 +2002,7 @@ button {
 
 .priceCard {
   position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1956,6 +2017,21 @@ button {
   box-shadow: 0 14px 44px rgba(0, 0, 0, 0.2);
   transition: background-color 180ms ease, color 180ms ease, transform 180ms ease, box-shadow 180ms ease,
     border-color 180ms ease;
+  isolation: isolate;
+}
+
+.priceCard--ended {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.priceCard--ended,
+.priceCard--ended * {
+  transition: none;
+}
+
+.priceCard:not(.priceCard--ended) {
+  z-index: 2;
 }
 
 .priceCard__label {
@@ -2099,6 +2175,8 @@ button {
   cursor: not-allowed;
 }
 
+.priceCard__soldState,
+.priceCard__soldOverlay,
 .priceCard__ended {
   display: none;
 }
@@ -2107,8 +2185,13 @@ button {
   display: none;
 }
 
+.priceCard--ended .priceCard__soldOverlay,
 .priceCard--ended .priceCard__ended {
   display: block;
+}
+
+.priceCard--ended .priceCard__soldState {
+  display: grid;
 }
 #prices .priceCard.priceCard--ended{
 	border-color:rgba(255, 255, 255, 0.08);
@@ -2165,47 +2248,51 @@ button {
   background: #d90f36;
 }
 
-.priceCard--ended {
-  filter: grayscale(0.1);
+.priceCard__soldState {
+  position: absolute;
+  inset: -62px -42px -88px;
+  z-index: 12;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
 }
 
-.priceCard--ended::after {
-  content: "";
+.priceCard__soldOverlay {
   position: absolute;
-  inset: 0;
-  z-index: 3;
-  border-radius: inherit;
-  background: rgba(0, 0, 0, 0.72);
+  z-index: 11;
+  inset: -62px -42px -88px;
+  background: rgba(0, 0, 0, 0.82);
+  clip-path: polygon(1.5% 2%, 98.8% 0, 100% 96.5%, 0 100%);
   pointer-events: none;
 }
 
 .priceCard__ended {
-  position: absolute;
-  left: 50%;
-  top: 52%;
-  transform: translate(-50%, -50%) rotate(-2deg);
-  z-index: 5;
+  position: relative;
+  z-index: 13;
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 0;
+  background: none;
+  clip-path: none;
   font-family: "Ekran", "Gilroy", system-ui, sans-serif;
   font-weight: 700;
   text-transform: lowercase;
-  font-size: clamp(44px, 5.2vw, 78px);
+  font-size: clamp(44px, 4.4vw, 66px);
+  line-height: 0.9;
   color: var(--red);
   text-align: center;
   white-space: nowrap;
-  text-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 14px 40px rgba(0, 0, 0, 0.75);
+  box-shadow: none;
   pointer-events: none;
+  transform: rotate(-2deg);
 }
 
-.priceCard--ended .priceCard__label,
-.priceCard--ended .priceCard__body,
-.priceCard--ended .priceCard__price {
-  opacity: 0.28;
-  position: relative;
-  z-index: 1;
-}
-
-.priceCard--ended .priceCard__btn {
-  opacity: 0.35;
+.priceCard--ended .priceCard__btn--ended {
+  z-index: 5;
+  background: #05030c;
+  color: rgba(255, 255, 255, 0.46);
+  border-color: rgba(255, 255, 255, 0.22);
   cursor: not-allowed;
 }
 
@@ -3959,6 +4046,15 @@ button {
   width: 1440px;
   height: 580px;
   background: #05030c;
+  overflow: hidden;
+}
+
+.studio__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .studio__chrome {
@@ -3988,7 +4084,12 @@ button {
   width: 175px;
   height: 175px;
   max-width: none;
+  pointer-events: none;
   transform: rotate(90deg);
+}
+
+.studio__stage:has(.studio__video) .studio__play {
+  display: none;
 }
 
 .studio__tape {
@@ -4546,9 +4647,7 @@ button {
 
   #program .program__panel {
     margin-top: 15px;
-    background:
-      radial-gradient(700px 280px at 38% 18%, rgba(255, 255, 255, 0.045), transparent 72%),
-      #05030c;
+    background: url("img/course-content/Page-10.png") center 70% / cover no-repeat;
     clip-path: polygon(0.4% 3%, 99.7% 1%, 100% 96%, 0.8% 98%);
   }
 
@@ -4845,7 +4944,7 @@ button {
     margin: 0;
     max-width: none;
     transform: rotate(-0.9deg);
-    background: #05030c;
+    background: url("img/course-content/Page-10.png") center / cover no-repeat;
     box-shadow: 0 22px 38px rgba(0, 0, 0, 0.16);
   }
 
@@ -5407,6 +5506,16 @@ button {
     height: 76px;
     border-width: 6px;
     font-size: 24px;
+  }
+
+  #prices .priceCard__soldState,
+  #prices .priceCard__soldOverlay {
+    inset: -50px -24px -62px;
+  }
+
+  #prices .priceCard__ended {
+    font-size: 38px;
+    max-width: calc(100% - 24px);
   }
 
   #prices .about_img {

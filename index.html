@@ -201,7 +201,15 @@
         </div>
 
         <div class="studio__stage" aria-label="Видео-экскурсия">
-          <div class="studio__black" aria-hidden="true"></div>
+          <div class="studio__black">
+            <iframe
+              class="studio__video"
+              src="https://www.youtube.com/embed/M7lc1UVf-VE?rel=0"
+              title="Видео-экскурсия по студии"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+              loading="lazy"></iframe>
+          </div>
           <img class="studio__chrome studio__chrome--bottom" src="img/figma-studio-video-bottom-desktop.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           <img class="studio__chrome studio__chrome--top" src="img/figma-studio-video-top-desktop.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           <img class="studio__play" src="img/figma-studio-play.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
@@ -387,6 +395,7 @@
 
         <div class="pricing">
           <article class="priceCard priceCard--ended">
+						<div class="priceCard__soldOverlay" aria-hidden="true"></div>
             <div class="priceCard__label priceCard__label--img priceCard__label--standart" aria-label="Стандарт">
               <span class="priceCard__labelText" aria-hidden="true">Стандарт</span>
             </div>
@@ -398,7 +407,9 @@
               <p>Доступ в закрытый канал</p>
             </div>
             <div class="priceCard__price"><span class="priceCard__num">40 000</span> <span>руб.</span></div>
-            <div class="priceCard__ended" aria-hidden="true">места закончились</div>
+            <div class="priceCard__soldState" role="status">
+              <div class="priceCard__ended">места закончились</div>
+            </div>
             <a class="btn btn--ghost btn--price priceCard__btn priceCard__btn--active" href="#"
               aria-label="Оплатить тариф стандарт">оплатить “стандарт”</a>
             <button class="btn btn--ghost btn--price priceCard__btn priceCard__btn--ended" type="button" disabled
