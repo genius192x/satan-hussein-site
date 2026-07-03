@@ -7,7 +7,7 @@
   <title>Satan Hussein — курс по сведению</title>
   <meta name="description" content="Авторский офлайн курс по сведению от Satan Hussein на студии Dark Side Records." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="styles.css?v=mobile-header-20260629" />
+  <link rel="stylesheet" href="styles.css?v=mobile-nav-bg-active-20260703" />
 </head>
 
 <body>
@@ -431,7 +431,7 @@
               “плюс”</a>
           </article>
 
-          <img class="about_img" src="/img/about/collage-bottom.svg" alt="">
+          <img class="about_img" src="img/about/collage-bottom.svg" alt="">
         </div>
       </div>
     </section>
@@ -571,7 +571,7 @@
     </section> -->
 
     <footer class="section section--dark" id="contacts">
-        <img class="footer_img" src="/img/about/collage-top.svg" alt="">
+        <img class="footer_img" src="img/about/collage-top.svg" alt="">
       <div class="container contacts">
         <a class="toTop" href="#top" aria-label="Наверх">↑</a>
         <div class="contacts__grid">
@@ -605,7 +605,7 @@
 
           <div class="contacts__right">
             <div class="contacts__logos" aria-hidden="true">
-              <img src="/img/about/footer-logo.svg" alt="">
+              <img src="img/about/footer-logo.svg" alt="">
             </div>
             <p class="contacts__foot">авторский офлайн курс по сведению от Satan Hussein. 2026</p>
           </div>
@@ -672,7 +672,24 @@
         navOverlay.addEventListener("click", (event) => {
           if (event.target === navOverlay) closeMenu();
         });
-        navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+        const setActiveDrawerLink = (activeLink) => {
+          navLinks.forEach((link) => {
+            const isActive = link === activeLink;
+            link.classList.toggle("site-nav__drawer-link--active", isActive);
+            if (isActive) {
+              link.setAttribute("aria-current", "page");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        };
+
+        navLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            setActiveDrawerLink(link);
+            closeMenu();
+          });
+        });
 
         document.addEventListener("keydown", (event) => {
           if (event.key === "Escape" && navRoot.classList.contains("site-nav--open")) {
