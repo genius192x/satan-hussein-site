@@ -154,7 +154,7 @@ button {
 
 
 #content {
-	padding: 10px 0px;
+	padding: 10px 0 0;
 }
 
 .container {
@@ -183,19 +183,20 @@ button {
 
 /* Header navigation */
 .site-header {
-  position: relative;
+  display: none;
+  position: fixed;
   z-index: 1000;
   width: 100%;
   padding: 18px 0 24px;
 }
 
-.site-header--fixed {
+/* .site-header--fixed {
   position: fixed;
   top: 0;
   left: 0;
   background: rgba(221, 221, 221, 0.96);
   backdrop-filter: blur(8px);
-}
+} */
 
 .site-header--fixed + main {
   padding-top: var(--site-header-offset);
@@ -431,6 +432,7 @@ button {
   }
 
   .site-header {
+    display: block;
     padding: 12px 0 8px;
   }
 
@@ -469,7 +471,40 @@ button {
   }
 
   .site-nav__toggle {
-    display: inline-flex;
+    position: fixed;
+    top: 26px;
+    right: 19px;
+    z-index: 2000;
+    display: inline-flex !important;
+    align-items: flex-end;
+    width: 50px;
+    height: 36px;
+    gap: 7px;
+  }
+
+  .site-nav__toggle-line {
+    width: 48px;
+    height: 5px;
+  }
+
+  .site-header--fixed {
+    background: transparent;
+    backdrop-filter: none;
+    pointer-events: none;
+  }
+
+  .site-header--fixed .site-header__inner {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 46px;
+  }
+
+  .site-header--fixed .site-header__brand {
+    display: none;
+  }
+
+  .site-header--fixed .site-nav__toggle {
+    pointer-events: auto;
   }
 }
 
@@ -646,6 +681,10 @@ button {
   white-space: nowrap;
 }
 
+.hero__navLink:hover{
+	color: #fff;
+}
+
 .hero__navLink::before {
   content: "";
   position: absolute;
@@ -665,6 +704,12 @@ button {
 .hero__navLink:focus-visible::before {
   opacity: 1;
   transform: translate(-50%, -50%) scale(1);
+}
+
+.hero__navLink[href="#reviews"]::before {
+  top: -17px;
+	transform: none;
+	transform: translate(-50%, 0) scale(1);
 }
 
 .hero__navLink[href="#about"] {
@@ -701,6 +746,12 @@ button {
   --nav-hover-img: url("img/nav/contancts.svg");
   --nav-hover-w: 100px;
   --nav-hover-h: 42px;
+}
+
+@media (max-width: 1023px) {
+  .hero__nav {
+    display: none;
+  }
 }
 
 .hero__grid {
@@ -1866,25 +1917,24 @@ button {
 }
 
 .audienceCard--red .audienceCard__title {
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .audienceCard--red .audienceCard__text {
-  /* color: rgba(255, 255, 255, 0.92); */
-  /* max-width: 60ch; */
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 60ch;
 }
 
 /* Absolute layout (desktop/tablet) */
 .audienceCard--novice {
   left: -20px;
   top: 0;
-  rotate: -2deg;
+  rotate: -1deg;
 }
 
 .audienceCard--performer {
   right: -20px;
   top: 50px;
-  rotate: 1deg;
 }
 
 .audienceCard--red {
@@ -1897,7 +1947,7 @@ button {
   right: -20px;
   top: 220px;
   z-index: -2;
-  rotate: 2deg;
+  rotate: 1deg;
 }
 
 .audienceStage__collage {
@@ -3034,7 +3084,7 @@ button {
   .hero {
     min-height: 775px;
     padding-top: 101px;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .hero .container {
@@ -3066,7 +3116,7 @@ button {
 
   .hero__copy__wrap {
     display: flex;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 13px;
     width: 100%;
@@ -3085,7 +3135,7 @@ button {
   }
 
   .hero__lead {
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -3315,21 +3365,6 @@ button {
   }
 
   #about.section::before,
-  #about.section::after {
-    content: "";
-    position: absolute;
-    right: 25px;
-    z-index: 20;
-    width: 25px;
-    height: 4px;
-    background: var(--ink);
-  }
-
-  #about.section::before {
-    top: 44px;
-    box-shadow: 0 8px 0 var(--ink), 0 16px 0 var(--ink);
-  }
-
   #about.section::after {
     display: none;
   }
@@ -3725,11 +3760,11 @@ button {
 }
 
 .audienceCard__title {
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .audienceCard__text {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -4354,15 +4389,7 @@ button {
 
   #studio.section::before,
   #course.section::before {
-    content: "";
-    position: absolute;
-    right: 25px;
-    top: 44px;
-    z-index: 20;
-    width: 25px;
-    height: 4px;
-    background: var(--ink);
-    box-shadow: 0 8px 0 var(--ink), 0 16px 0 var(--ink);
+    display: none;
   }
 
   #studio .studio__inner,
@@ -4712,27 +4739,27 @@ button {
   #audience .audienceCard {
     width: 520px;
     height: 240px;
-    padding: 66px 42px 30px;
+    padding: 70px 31px 30px;
   }
 
   #audience .audienceCard--novice {
-    left: -18px;
+    left: 16px;
     top: 0;
   }
 
   #audience .audienceCard--performer {
-    right: -18px;
+    right: -7px;
     top: 48px;
   }
 
   #audience .audienceCard--red {
-    left: -38px;
+    left: -9px;
     top: 205px;
-    z-index: 3;
+    z-index: 2;
   }
 
   #audience .audienceCard--engineer {
-    right: -18px;
+    right: -43px;
     top: 257px;
     z-index: 2;
   }
@@ -4835,16 +4862,12 @@ button {
 		margin: 0 auto;
 		display: flex;
 		gap: 57px;
-    top: 130px;
+		margin-top: 40px;
     width: 970px;
   }
 
   #audience .audience__body {
-    /* position: absolute;
-    left: 50%;
-    top: 265px; */
     width: 970px;
-    /* transform: translateX(-50%); */
   }
 
   #audience .audienceStage {
@@ -4853,28 +4876,31 @@ button {
   }
 
   #audience .audienceCard--novice {
-    top: 0;
+    top: -20px;
+		z-index: 3;
   }
 
   #audience .audienceCard--performer {
-    top: 48px;
+    top: 33px;
+		z-index: 4;
   }
 
   #audience .audienceCard--red {
-    top: 163px;
+    top: 143px;
   }
 
   #audience .audienceCard--engineer {
-    top: 237px;
+		z-index: 1;
+    top: 204px;
   }
 
   #audience .audienceStage__collage {
-    left: 70px;
-    top: 375px;
-    bottom: auto;
-    width: 380px;
-    margin-top: 0;
-    transform: none;
+    left: 51px;
+		top: 314px;
+		bottom: auto;
+		width: 386px;
+		margin-top: 0;
+		transform: none;
   }
 }
 
@@ -4889,15 +4915,7 @@ button {
 
   #program.section::before,
   #audience.section::before {
-    content: "";
-    position: absolute;
-    right: 25px;
-    top: 44px;
-    z-index: 20;
-    width: 25px;
-    height: 4px;
-    background: var(--ink);
-    box-shadow: 0 8px 0 var(--ink), 0 16px 0 var(--ink);
+    display: none;
   }
 
   #program.section {
@@ -5406,6 +5424,7 @@ button {
 
   #prices .container,
   #reviews .container {
+    box-sizing: border-box;
     width: 100%;
     padding: 0 25px;
   }
@@ -5638,5 +5657,127 @@ button {
   #reviews .reviewArrow {
     width: 88px;
     height: 60px;
+  }
+}
+
+/* Final desktop alignment for the reviews/footer screen. */
+@media (min-width: 421px) {
+  #reviews.section {
+    height: min(765px, 53.125vw);
+    min-height: 640px;
+  }
+
+  #reviews .h2 {
+    padding-top: clamp(86px, 6.5vw, 104px);
+  }
+
+  #reviews .container {
+    width: min(1040px, calc(100% - 40px));
+  }
+
+  #reviews .reviews {
+    margin-top: -12px;
+  }
+
+  #reviews .reviews__viewport {
+    width: 100%;
+    margin-left: 0;
+    padding-right: 48px;
+  }
+
+  #reviews .reviews__controls {
+    margin-top: 40px;
+  }
+
+  #reviews .review {
+    --review-card-max: 910px;
+    --head-y: -109px;
+  }
+
+  #reviews .review__body {
+    min-height: 270px;
+  }
+
+  #reviews .review__quote {
+    width: 140px;
+    height: 126px;
+  }
+
+  #reviews .review__quote::before {
+    font-size: 142px;
+  }
+
+  #contacts.section {
+    min-height: 238px;
+    padding: 39px 0 48px;
+    overflow: hidden;
+    background: #05050b;
+  }
+
+  #contacts .container {
+    box-sizing: content-box;
+    width: min(1140px, calc(100% - 60px));
+    padding: 0;
+  }
+
+  .contacts {
+    padding: 0;
+  }
+
+  .contacts__grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 64px;
+    margin: 0;
+  }
+
+  .contacts__left {
+    flex: 0 0 auto;
+  }
+
+  .contacts__right {
+    flex: 0 0 450px;
+    align-items: center;
+  }
+
+  .contacts__title {
+    font-size: 36px;
+    letter-spacing: 0;
+  }
+
+  .contacts__list {
+    margin-top: 24px;
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .contacts__logos {
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .contacts__logos img {
+    width: 420px;
+    max-width: 100%;
+  }
+
+  .contacts__foot {
+    width: 100%;
+    margin-top: 17px;
+    text-align: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .footer_img {
+    top: -335px;
+    bottom: auto;
+    z-index: 0;
+  }
+
+  .contacts__grid {
+    z-index: 2;
   }
 }
