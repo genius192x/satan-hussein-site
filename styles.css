@@ -75,7 +75,7 @@ body {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--site-header-offset) + 16px);
+  scroll-padding-top: 16px;
 }
 
 body {
@@ -199,7 +199,7 @@ button {
 } */
 
 .site-header--fixed + main {
-  padding-top: var(--site-header-offset);
+  padding-top: 0;
 }
 
 .site-header__inner {
@@ -483,17 +483,18 @@ button {
 
 @media (max-width: 1023px) {
   :root {
-    --site-header-offset: 76px;
+    --site-header-offset: 0px;
   }
 
   .site-header {
-    display: block;
-    padding: 12px 0 8px;
+    display: contents;
+    padding: 0;
   }
 
   .site-header__inner {
-    grid-template-columns: minmax(0, 1fr) auto;
-    min-height: 56px;
+    display: contents;
+    min-height: 0;
+    padding: 0;
   }
 
   .site-header__brand {
@@ -527,19 +528,19 @@ button {
 
   .site-nav__toggle {
     position: fixed;
-    top: 26px;
-    right: 19px;
+    top: 44px;
+    right: 25px;
     z-index: 2000;
     display: inline-flex !important;
-    align-items: flex-end;
-    width: 50px;
-    height: 36px;
-    gap: 7px;
+    align-items: stretch;
+    width: 25px;
+    height: 20px;
+    gap: 4px;
   }
 
   .site-nav__toggle-line {
-    width: 48px;
-    height: 5px;
+    width: 25px;
+    height: 4px;
   }
 
   .site-header--fixed {
@@ -549,9 +550,8 @@ button {
   }
 
   .site-header--fixed .site-header__inner {
-    display: flex;
-    justify-content: flex-end;
-    min-height: 46px;
+    display: contents;
+    min-height: 0;
   }
 
   .site-header--fixed .site-header__brand {
@@ -563,18 +563,9 @@ button {
   }
 }
 
-@media (max-width: 420px) {
-  .site-header__brand-logo {
-    width: 86px;
-  }
-
-  .site-header__brand-caption {
-    max-width: 128px;
-    font-size: 9px;
-  }
-
+@media (max-width: 767px) {
   .site-nav__overlay {
-    padding-top: 84px;
+    padding: 84px 22px 24px;
   }
 
   .site-nav__drawer {
@@ -1231,9 +1222,7 @@ button {
 }
 
 #about .twoCol__copy .lead,
-#about .twoCol__copy .p,
-#about .lead[style],
-#about .p[style] {
+#about .twoCol__copy .p {
   width: 379px !important;
 }
 
@@ -1368,7 +1357,7 @@ button {
 
 #about .oval-mayot .oval__text {
 	top: 23px;
-	left: 28px !important;
+	left: 28px;
 	transform: none;
 	rotate: -3deg;
 }
@@ -2458,6 +2447,8 @@ button {
 
 /* Reviews */
 #reviews.section {
+  position: relative;
+  z-index: 20;
   padding: clamp(32px, 4.2vw, 56px) 0;
 }
 
@@ -2582,6 +2573,7 @@ button {
   border-radius: 18px;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.5px 0.8px 0 rgba(0, 17, 34, 0.2);
   display: grid;
   place-items: center;
   font-size: 0;
@@ -2603,7 +2595,7 @@ button {
   }
 
   .review--short .review__quote::before {
-    transform: translateY(-4%);
+    /* transform: translateY(-4%); */
   }
 }
 
@@ -2614,7 +2606,7 @@ button {
   font-size: clamp(78px, 7.2vw, 108px);
   line-height: 0.92;
   letter-spacing: -0.02em;
-  transform: translateY(-6%);
+  /* transform: translateY(-6%); */
 }
 
 .review__head {
@@ -2652,6 +2644,10 @@ button {
   --quote-y: clamp(-54px, -4.4vw, -36px);
 }
 
+.review--vision .review__head {
+  rotate: 2deg;
+}
+
 .review--atlantis {
   --head-dx: 18px;
   --head-rot: -2deg;
@@ -2661,12 +2657,20 @@ button {
   --quote-y: clamp(-54px, -4.4vw, -36px);
 }
 
+.review--atlantis .review__head {
+  top: -15px;
+}
+
 .review--miroslav {
   --head-rot: -1.25deg;
   --head-x: clamp(232px, 25vw, 450px);
   --head-y: clamp(-76px, -6vw, -54px);
   --quote-x: clamp(-86px, -6.4vw, -62px);
   --quote-y: clamp(-54px, -4.4vw, -36px);
+}
+
+.review--miroslav .review__head {
+  rotate: 2deg;
 }
 
 /* Short cards have slightly different collage geometry in mockups. */
@@ -2684,6 +2688,11 @@ button {
   --short-quote-top: clamp(-14px, -2.2vw, -8px);
   --short-quote-rot: -4deg;
   --short-head-rot: -2deg;
+}
+
+.review--stanislav .review__head {
+  top: 20px;
+  rotate: 3.5deg;
 }
 
 .review__name {
@@ -2822,6 +2831,11 @@ button {
     top: 0;
     right: auto;
     transform: translateX(-50%) translate(var(--short-head-x), var(--short-head-y)) rotate(var(--short-head-rot));
+  }
+
+  .review--stanislav .review__head {
+    top: 20px;
+    rotate: 3.5deg;
   }
 
 }
@@ -3093,7 +3107,7 @@ button {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 767px) {
 
   body {
     overflow-x: hidden;
@@ -3277,14 +3291,12 @@ button {
   }
 
   .twoCol__copy .lead,
-  .twoCol__copy .p,
-  #about .lead[style],
-  #about .p[style] {
+  .twoCol__copy .p {
     width: 100% !important;
     max-width: none !important;
   }
 
-  #about .tape[style] {
+  #about .tape {
     max-width: 437px;
     height: 90px !important;
     rotate: -5deg;
@@ -3460,9 +3472,7 @@ button {
   }
 
   #about .twoCol__copy .lead,
-  #about .twoCol__copy .p,
-  #about .lead[style],
-  #about .p[style] {
+  #about .twoCol__copy .p {
     width: 319px !important;
     max-width: none !important;
   }
@@ -3503,8 +3513,7 @@ button {
     top: 274px;
   }
 
-  #about .tape,
-  #about .tape[style] {
+  #about .tape {
     position: absolute;
     left: 6px;
     top: 335px;
@@ -3559,7 +3568,7 @@ button {
   }
 
   #about .ovals-mobile .oval-bittuev {
-    left: 113px;
+    left: 118px;
     top: 410px;
     right: auto;
     width: 239px;
@@ -3572,7 +3581,7 @@ button {
 
   #about .ovals-mobile .oval-ram {
     left: 117px;
-    top: 472px;
+    top: 480px;
     right: auto;
     width: 266px;
     height: 60px;
@@ -3605,11 +3614,11 @@ button {
     position: absolute;
     z-index: 5;
     display: block;
-    left: -59px;
-    top: 333px;
-    width: 486px;
+    left: -85px;
+    top: 352px;
+    width: 526px;
     max-width: none;
-    transform: rotate(-4.33deg);
+    transform: none;
   }
 
   #about .collageStats__labels {
@@ -3637,7 +3646,7 @@ button {
 
   #about .collageStats__labels-mobile .collageStats__label--streams {
     left: 199px;
-    top: 556px;
+    top: 589px;
     width: 151px;
     color: var(--ink);
     rotate: -8.35deg;
@@ -3645,7 +3654,7 @@ button {
 
   #about .collageStats__labels-mobile .collageStats__label--credits {
     left: 225px;
-    top: 674px;
+    top: 687px;
     width: 130px;
     color: var(--red);
     rotate: -4deg;
@@ -4434,12 +4443,21 @@ button {
   top: 820px;
 }
 
-@media (max-width: 420px) {
+.reviews__title{
+	rotate: 2deg;
+}
+
+@media (max-width: 767px) {
   #studio.section,
   #course.section {
     height: 812px;
     padding: 0;
     overflow: hidden;
+  }
+
+  #course.section {
+    height: 880px;
+    min-height: 880px;
   }
 
   #studio.section::before,
@@ -4514,8 +4532,8 @@ button {
 
   .studio__tape {
     content: url("img/figma-studio-tape-mobile.png");
-    left: -78px;
-    top: 738px;
+    left: -76px;
+    top: 791px;
     width: 112px;
     height: 53px;
     transform: rotate(-3.33deg) scaleY(-1);
@@ -4631,14 +4649,14 @@ button {
 
   #course .course__certificatePlus {
     left: -25px;
-    top: 23px;
+    top: 1px;
     width: 78px;
     height: 81px;
   }
 
   #course .course__certificateText {
     left: 63px;
-    top: 28px;
+    top: 19px;
     width: 238px;
     font-family: "Gilroy-Medium", "Gilroy", system-ui, sans-serif;
     font-weight: 500;
@@ -4650,8 +4668,17 @@ button {
   #course .course__art {
     left: -19px;
     top: 443px;
+    z-index: 4;
     width: 417px;
     height: 404px;
+  }
+
+  #course .course__art::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: url("img/figma-course-collage-mobile.png") center / 100% 100% no-repeat;
   }
 
   #course .course__collage--desktop {
@@ -4659,13 +4686,15 @@ button {
   }
 
   #course .course__collage--mobile {
-    display: block;
+    position: absolute;
+    z-index: 1;
+    display: none;
     width: 417px;
     height: 404px;
   }
 
   #course .course__labels {
-    z-index: 4;
+    z-index: 2;
   }
 
   #course .course__label {
@@ -4676,7 +4705,7 @@ button {
 
   #course .course__label--days {
     left: 188px;
-    top: 202px;
+    top: 215px;
     width: 122px;
     transform: rotate(-4.05deg);
   }
@@ -4689,7 +4718,7 @@ button {
 }
 
 /* Semantic Figma sections: text stays real HTML, images are decorative only. */
-@media (min-width: 421px) {
+@media (min-width: 768px) {
   #course.section,
   #program.section,
   #audience.section {
@@ -4834,7 +4863,7 @@ button {
   }
 }
 
-@media (min-width: 421px) and (max-width: 1099px) {
+@media (min-width: 768px) and (max-width: 1099px) {
   #course.section {
     height: auto;
     min-height: 980px;
@@ -4959,7 +4988,7 @@ button {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 767px) {
   #program.section,
   #audience.section {
     position: relative;
@@ -5207,7 +5236,7 @@ button {
 }
 
 /* Pixel-perfect pricing and reviews */
-@media (min-width: 421px) {
+@media (min-width: 768px) {
   #prices.section {
     height: min(900px, 62.5vw);
     min-height: 650px;
@@ -5376,7 +5405,7 @@ button {
   #reviews .reviews__viewport {
     width: calc(100% + 80px);
     margin-left: -40px;
-    padding: 88px 100px 0;
+    padding: 121px 100px 0;
   }
 
   #reviews .reviews__viewport .swiper-slide {
@@ -5392,7 +5421,7 @@ button {
   }
 
   #reviews .review__body {
-    min-height: 212px;
+    /* min-height: 212px; */
     padding: 28px 40px 27px;
     border-radius: 11px;
     border: 0;
@@ -5420,7 +5449,7 @@ button {
   }
 
   #reviews .review__tag {
-    width: 362px;
+    /* width: 362px; */
     min-height: 104px;
     padding: 20px 32px;
     border-radius: 11px;
@@ -5436,10 +5465,7 @@ button {
   #reviews .review__role {
     font-size: 13px;
   }
-
-  #reviews .review--atlantis {
-    --head-x: 305px;
-  }
+	
 
   #reviews .review--short {
     --short-card: 550px;
@@ -5468,10 +5494,38 @@ button {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 767px) {
+  #content {
+    padding: 0;
+  }
+
+  .hero {
+    height: 812px;
+    min-height: 812px;
+    padding-top: 54px;
+  }
+
+  .hero__grid {
+    min-height: 758px;
+  }
+
+  .hero__lead {
+    align-self: flex-start;
+    font-size: 18px;
+    font-family: "Gilroy-Bold", "Gilroy", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.9px;
+    transform: translateY(41px);
+  }
+
+  .hero__btn {
+    bottom: 63px;
+  }
+
   #prices.section {
     position: relative;
-    min-height: 1335px;
+    height: 812px;
+    min-height: 812px;
     padding: 0;
     overflow: hidden;
     background: #05030c;
@@ -5511,15 +5565,16 @@ button {
   #prices .pricing {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 104px;
+    gap: 95px;
     width: 325px;
-    margin: 94px auto 0;
+    margin: 31px auto 0;
   }
 
   #prices .priceCard {
     width: 325px;
-    min-height: 390px;
-    padding: 69px 22px 79px;
+    height: 212px;
+    min-height: 0;
+    padding: 36px 8px 34px;
     border-radius: 13px;
     border-color: rgba(255, 255, 255, 0.9);
     background: transparent;
@@ -5527,38 +5582,38 @@ button {
   }
 
   #prices .priceCard__label--img {
-    top: -43px;
-    height: 88px;
+    top: -31px;
+    height: 60px;
     filter: none;
   }
 
   #prices .priceCard__label--standart {
-    width: 325px;
+    width: 222px;
   }
 
   #prices .priceCard__label--plusTape {
-    width: 282px;
+    width: 197px;
   }
 
   #prices .priceCard__labelText {
-    font-size: 47px;
+    font-size: 26px;
     letter-spacing: 0;
   }
 
   #prices .priceCard__body {
     align-content: start;
-    gap: 12px;
+    gap: 5px;
     line-height: 1.25;
   }
 
   #prices .priceCard__body p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   #prices .focus {
-    width: 280px;
-    margin: 3px auto 0;
-    padding: 19px 15px;
+    width: 300px;
+    margin: 10px auto 0;
+    padding: 13px 16px;
   }
 
   #prices .focus__ring {
@@ -5566,20 +5621,20 @@ button {
   }
 
   #prices .priceCard__price {
-    font-size: 22px;
+    font-size: 18px;
   }
 
   #prices .priceCard__num {
-    font-size: 50px;
+    font-size: 32px;
     letter-spacing: 0;
   }
 
   #prices .priceCard__btn {
-    bottom: -49px;
-    width: 276px !important;
-    height: 76px;
-    border-width: 6px;
-    font-size: 24px;
+    bottom: -50px;
+    width: 238px !important;
+    height: 66px;
+    border-width: 5px;
+    font-size: 26px;
   }
 
   #prices .priceCard__soldState,
@@ -5593,16 +5648,13 @@ button {
   }
 
   #prices .about_img {
-    bottom: -55px;
-    width: auto;
-    min-width: 760px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
   }
 
   #reviews.section {
-    min-height: 780px;
-    padding: 0 0 28px;
+    height: 812px;
+    min-height: 812px;
+    padding: 0;
     overflow: hidden;
   }
 
@@ -5611,8 +5663,8 @@ button {
   }
 
   #reviews .lead {
-    width: 325px;
-    margin-top: 18px;
+    width: 246px;
+    margin-top: 0;
     font-family: "Gilroy-Bold", "Gilroy", system-ui, sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -5626,21 +5678,25 @@ button {
   }
 
   #reviews .reviews__viewport {
-    padding: 104px 25px 0;
+    padding: 24px 25px 0;
   }
 
   #reviews .review {
     --quote-x: -6px;
     --quote-y: -39px;
-    --head-x: 35px;
-    --head-y: -91px;
+    --head-x: 9px;
+    --head-y: -29px;
     --head-rot: -1.5deg;
     width: 325px;
+    overflow: visible;
   }
 
   #reviews .review__body {
-    min-height: 330px;
-    padding: 62px 24px 28px;
+    width: 435px;
+    /* height: 456px; */
+    min-height: 0;
+    margin-left: -6.5px;
+    padding: 31px 55px 16px;
     border: 0;
     border-radius: 11px;
   }
@@ -5664,10 +5720,10 @@ button {
   }
 
   #reviews .review__tag {
-    width: max-content;
-    max-width: 300px;
-    min-height: 82px;
-    padding: 17px 20px;
+    width: 301px;
+    max-width: none;
+    min-height: 65px;
+    padding: 12px 18px;
     border-radius: 11px;
     flex-wrap: nowrap;
     gap: 12px;
@@ -5690,7 +5746,7 @@ button {
   }
 
   #reviews .review--atlantis {
-    --head-x: 4px;
+    --head-x: 9px;
   }
 
   #reviews .review--short {
@@ -5705,7 +5761,12 @@ button {
   }
 
   #reviews .reviews__controls {
-    margin-top: 22px;
+    position: absolute;
+    left: 90px;
+    top: 692px;
+    width: 194px;
+    height: 65px;
+    margin: 0;
     gap: 62px;
   }
 
@@ -5713,10 +5774,203 @@ button {
     width: 88px;
     height: 60px;
   }
+
+  #program.section {
+    min-height: 812px;
+    height: 812px;
+  }
+
+  #program .program__panel {
+    left: 0;
+    top: 205px;
+    width: 375px;
+    min-height: 607px;
+    transform: none;
+    background: #05030c;
+    box-shadow: none;
+  }
+
+  #program .program__panel::after {
+    right: 26px;
+    bottom: 17px;
+  }
+
+  #program .program__panelInner {
+    width: 325px;
+    padding: 52px 0 0 25px;
+  }
+
+  #program .program__col,
+  #program .program__col + .program__col {
+    display: contents;
+    margin: 0;
+  }
+
+  #program .module {
+    display: grid;
+    grid-template-columns: 66px 1fr;
+    column-gap: 5px;
+    min-height: 44px;
+  }
+
+  #program .module__n {
+    grid-column: 1;
+    margin-top: 10px;
+  }
+
+  #program .module__t {
+    grid-column: 2;
+    margin-top: 0;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  #audience.section {
+    min-height: 812px;
+    height: 812px;
+  }
+
+  #audience .audience__title {
+    width: 260px;
+    line-height: 57px;
+  }
+
+  #audience .audience__lead {
+    top: 113px;
+    width: 290px;
+  }
+
+  #audience .audienceStage {
+    top: 191px;
+    height: 559px;
+  }
+
+  #audience .audienceCard {
+    width: 325px;
+    left: 25px;
+    padding: 0;
+    background: transparent;
+  }
+
+  #audience .audienceCard::before {
+    display: none;
+  }
+
+  #audience .audienceCard--novice {
+    top: 0;
+    height: 110px;
+  }
+
+  #audience .audienceCard--red {
+    top: 135px;
+    height: 141px;
+    color: #fdfdfd;
+  }
+
+  #audience .audienceCard--performer {
+    top: 309px;
+    height: 120px;
+  }
+
+  #audience .audienceCard--engineer {
+    top: 459px;
+    height: 100px;
+  }
+
+  #audience .audienceCard__title,
+  #audience .audienceCard--red .audienceCard__title {
+    font-size: 26px;
+    line-height: 26px;
+  }
+
+  #audience .audienceCard__text {
+    max-width: 325px;
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  #contacts.section {
+    height: 812px;
+    min-height: 812px;
+    padding: 0;
+    overflow: hidden;
+    background: #05030c;
+  }
+
+  #contacts .container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  .contacts {
+    position: relative;
+  }
+
+  .contacts .toTop {
+    display: none;
+  }
+
+  .contacts__grid {
+    display: block;
+    height: 100%;
+    margin: 0;
+  }
+
+  .contacts__title {
+    position: absolute;
+    left: 93px;
+    top: 271px;
+    width: 189px;
+    font-size: 46px;
+    line-height: 46px;
+    text-align: center;
+  }
+
+  .contacts__list {
+    position: absolute;
+    left: 36px;
+    top: 395px;
+    width: 299px;
+    margin: 0;
+    padding: 0;
+    gap: 14px;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .contacts__list li {
+    justify-content: center;
+  }
+
+  .contacts__logos {
+    position: absolute;
+    left: 47px;
+    top: 594px;
+    width: 280px;
+    margin: 0;
+  }
+
+  .contacts__logos img {
+    width: 280px;
+  }
+
+  .contacts__foot {
+    position: absolute;
+    left: 88px;
+    top: 729px;
+    width: 198px;
+    margin: 0;
+    font-size: 7px;
+    line-height: 12px;
+    text-align: center;
+  }
 }
 
 /* Final desktop alignment for the reviews/footer screen. */
-@media (min-width: 421px) {
+@media (min-width: 768px) {
   #reviews.section {
     height: min(765px, 53.125vw);
     min-height: 640px;
@@ -5750,16 +6004,23 @@ button {
   }
 
   #reviews .review__body {
-    min-height: 270px;
+    /* min-height: 270px; */
+  }
+
+	#reviews .review--atlantis {
+    --head-x: 205px;
+		--head-y: -85px;
   }
 
   #reviews .review__quote {
-    width: 140px;
-    height: 126px;
+    width: 106px;
+    height: 106px;
   }
 
   #reviews .review__quote::before {
-    font-size: 142px;
+    font-size: 220px;
+		transform: translate(0px, 50%);
+		line-height: 0.57;
   }
 
   #contacts.section {
