@@ -917,7 +917,7 @@ button {
   flex: 0 0 28px;
   width: 28px;
   height: 10px;
-  background: url("img/zigzag.png") center / contain no-repeat;
+  background: url("img/zigzag.webp") center / contain no-repeat;
 }
 
 @media (max-width: 1439px) and (min-width: 1024px) {
@@ -975,7 +975,7 @@ button {
 .tape__bg {
   position: absolute;
   inset: -8px -18px;
-  background: url("img/tape-red.png") center / contain no-repeat;
+  background: url("img/tape-red.webp") center / contain no-repeat;
   pointer-events: none;
   background-size: 437px;
   z-index: 10;
@@ -1261,7 +1261,7 @@ button {
 
 #about .tape__bg {
   inset: 0;
-  background-image: url("img/tape-red-desktop-figma.png");
+  background-image: url("img/tape-red-desktop-figma.webp");
   background-size: 437px 138px;
 }
 
@@ -1798,7 +1798,7 @@ button {
   width: 100vw;
   margin-left: 50%;
   transform: translateX(-50%);
-  background: url("img/course-content/Page-10.png") center 70% / cover no-repeat;
+  background: url("img/course-content/Page-10.webp") center 70% / cover no-repeat;
   max-width: 1440px;
 }
 
@@ -3527,7 +3527,7 @@ button {
 
   #about .tape__bg {
     inset: 0;
-    background-image: url("img/tape-red-mobile-figma.png");
+    background-image: url("img/tape-red-mobile-figma.webp");
     background-size: 294px 92px;
     background-position: center top;
   }
@@ -4228,7 +4228,7 @@ button {
 .course__zigzag {
   width: 36px;
   height: 30px;
-  background: url("img/zigzag.png") center / 28px 10px no-repeat;
+  background: url("img/zigzag.webp") center / 28px 10px no-repeat;
 }
 
 /* Course / Page 4 */
@@ -4288,7 +4288,7 @@ button {
   top: 175px;
   width: 444px;
   height: 124px;
-  background: url("img/figma-course-tape-red-desktop.png") center / 441px 110px no-repeat;
+  background: url("img/figma-course-tape-red-desktop.webp") center / 441px 110px no-repeat;
   transform: rotate(1.78deg);
 }
 
@@ -4356,7 +4356,7 @@ button {
 	height: 133px;
 	max-width: none;
 	padding: 0;
-	background: url(img/figma-course-tape-black-desktop.png) center / 508px 125px no-repeat;
+	background: url(img/figma-course-tape-black-desktop.webp) center / 508px 125px no-repeat;
 	transform: rotate(-0.87deg);
 }
 
@@ -4511,13 +4511,13 @@ button {
   }
 
   .studio__chrome--bottom {
-    content: url("img/figma-studio-video-bottom-mobile.png");
+    content: url("img/figma-studio-video-bottom-mobile.webp");
     left: -366px;
     top: 349px;
   }
 
   .studio__chrome--top {
-    content: url("img/figma-studio-video-top-mobile.png");
+    content: url("img/figma-studio-video-top-mobile.webp");
     left: -424px;
     top: 18px;
   }
@@ -4531,7 +4531,7 @@ button {
   }
 
   .studio__tape {
-    content: url("img/figma-studio-tape-mobile.png");
+    content: url("img/figma-studio-tape-mobile.webp");
     left: -76px;
     top: 791px;
     width: 112px;
@@ -4582,7 +4582,7 @@ button {
     top: 175px;
     width: 322px;
     height: 87px;
-    background-image: url("img/figma-course-tape-red-mobile.png");
+    background-image: url("img/figma-course-tape-red-mobile.webp");
     background-size: 320px 80px;
     transform: rotate(1.13deg);
   }
@@ -4642,7 +4642,7 @@ button {
     z-index: 5;
     width: 462px;
     height: 121px;
-    background-image: url("img/figma-course-tape-black-mobile.png");
+    background-image: url("img/figma-course-tape-black-mobile.webp");
     background-size: 460px 113px;
     transform: rotate(-1.02deg);
   }
@@ -4678,7 +4678,7 @@ button {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: url("img/figma-course-collage-mobile.png") center / 100% 100% no-repeat;
+    background: url("img/figma-course-collage-mobile.webp") center / 100% 100% no-repeat;
   }
 
   #course .course__collage--desktop {
@@ -4758,7 +4758,7 @@ button {
 
   #program .program__panel {
     margin-top: 15px;
-    background: url("img/course-content/Page-10.png") center 70% / cover no-repeat;
+    background: url("img/course-content/Page-10.webp") center 70% / cover no-repeat;
     clip-path: polygon(0.4% 3%, 99.7% 1%, 100% 96%, 0.8% 98%);
   }
 
@@ -5046,7 +5046,7 @@ button {
     margin: 0;
     max-width: none;
     transform: rotate(-0.9deg);
-    background: url("img/course-content/Page-10.png") center / cover no-repeat;
+    background: url("img/course-content/Page-10.webp") center / cover no-repeat;
     box-shadow: 0 22px 38px rgba(0, 0, 0, 0.16);
   }
 
@@ -6156,7 +6156,7 @@ button {
     top: 221px;
     width: 548px;
     height: 576px;
-    background: url("img/collage-hero.png") center / contain no-repeat;
+    background: url("img/collage-hero.webp") center / contain no-repeat;
     opacity: 0.92;
   }
 
@@ -6546,7 +6546,7 @@ button {
   }
 
   #course .course__art::before {
-    background-image: url("img/experience-mobile-collage.png");
+    background-image: url("img/experience-mobile-collage.webp");
   }
 
   #course .course__collage--mobile {
@@ -6562,7 +6562,7 @@ button {
     width: 110px;
     height: 60px;
     border-radius: 0;
-    background: url("img/rec-red-bage.png") center / 110px 60px no-repeat;
+    background: url("img/rec-red-bage.webp") center / 110px 60px no-repeat;
     transform: none;
   }
 }
