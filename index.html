@@ -145,7 +145,7 @@
                 </div>
               </div>
             </div>
-            <img class="collageStats__img-mobile" src="img/collage-about-mobile-figma.png" alt="" loading="lazy"
+            <img class="collageStats__img-mobile" src="img/road-mobile-collage.png" alt="" loading="lazy"
               decoding="async" />
             <div class="collageStats__labels-mobile" aria-hidden="true">
               <div class="collageStats__label collageStats__label--streams">
@@ -251,7 +251,7 @@
 
         <div class="course__art" aria-label="66 дней обучения, 11 модулей">
           <img class="course__collage course__collage--desktop" src="img/figma-course-collage-desktop.png" alt="" loading="lazy" decoding="async" />
-          <img class="course__collage course__collage--mobile" src="img/figma-course-collage-mobile.png" alt="" loading="lazy" decoding="async" />
+          <img class="course__collage course__collage--mobile" src="img/experience-mobile-collage.png" alt="" loading="lazy" decoding="async" />
           <div class="course__labels" aria-hidden="true">
             <div class="course__label course__label--days">дней обучения</div>
             <div class="course__label course__label--modules">модулей</div>
@@ -573,10 +573,12 @@
     <footer class="section section--dark" id="contacts">
         <img class="footer_img" src="img/about/collage-top.svg" alt="">
       <div class="container contacts">
-        <a class="toTop" href="#top" aria-label="Наверх">↑</a>
+        <a class="toTop" href="#top" aria-label="Наверх">
+          <img class="toTop__icon" src="img/about/arrow.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+        </a>
         <div class="contacts__grid">
           <div class="contacts__left">
-            <h2 class="h2 h2--invert contacts__title">контакты:</h2>
+            <h2 class="h2 h2--invert contacts__title">контакты</h2>
 
             <ul class="contacts__list">
               <li>
@@ -607,7 +609,10 @@
             <div class="contacts__logos" aria-hidden="true">
               <img src="img/about/footer-logo.svg" alt="">
             </div>
-            <p class="contacts__foot">авторский офлайн курс по сведению от Satan Hussein. 2026</p>
+            <p class="contacts__foot">
+              <span>авторский офлайн курс по сведению от Satan Hussein</span>
+              <span>2026</span>
+            </p>
           </div>
         </div>
       </div>
@@ -634,6 +639,22 @@
 
         const updateHeaderPosition = () => {
           navRoot.classList.toggle("site-header--fixed", window.scrollY >= headerHeight);
+        };
+
+        const updateNavTone = () => {
+          const toggleBox = navToggle.getBoundingClientRect();
+          const probeY = toggleBox.top + toggleBox.height / 2;
+          const pricesSection = document.querySelector("#prices");
+          const contactsSection = document.querySelector("#contacts");
+          const pricesRect = pricesSection?.getBoundingClientRect();
+          const contactsRect = contactsSection?.getBoundingClientRect();
+          const isDarkPrices = pricesRect ? pricesRect.top <= probeY && pricesRect.bottom >= probeY : false;
+          const contactsLightCap = window.matchMedia("(max-width: 767px)").matches ? 190 : 0;
+          const isDarkContacts = contactsRect
+            ? contactsRect.top + contactsLightCap <= probeY && contactsRect.bottom >= probeY
+            : false;
+          const isDark = isDarkPrices || isDarkContacts;
+          navToggle.classList.toggle("site-nav__toggle--light", isDark);
         };
 
         const closeMenu = () => {
@@ -700,20 +721,34 @@
         window.addEventListener("resize", () => {
           syncHeaderOffset();
           updateHeaderPosition();
+          updateNavTone();
 
           if (window.matchMedia("(min-width: 1024px)").matches && navRoot.classList.contains("site-nav--open")) {
             closeMenu();
           }
         });
 
-        window.addEventListener("scroll", updateHeaderPosition, { passive: true });
+        window.addEventListener("scroll", () => {
+          updateHeaderPosition();
+          updateNavTone();
+        }, { passive: true });
         syncHeaderOffset();
         updateHeaderPosition();
+        updateNavTone();
       }
 
       const viewport = document.querySelector("[data-reviews-viewport]");
       const prev = document.querySelector("[data-reviews-prev]");
       const next = document.querySelector("[data-reviews-next]");
+      const toTop = document.querySelector(".toTop");
+
+      if (toTop) {
+        toTop.addEventListener("click", (event) => {
+          event.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          history.replaceState(null, "", window.location.pathname);
+        });
+      }
 
       if (viewport && prev && next) {
         const canInitSwiper = typeof Swiper === "function";
