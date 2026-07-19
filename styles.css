@@ -6566,3 +6566,22 @@ button {
     transform: none;
   }
 }
+
+/* Footer transition: the source is exported at 2x (120px), so it renders at 60px. */
+#contacts.section {
+  background-color: #000;
+  background-image: url("img/footer-top-bg.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 60px;
+}
+
+#contacts.section::before {
+  content: none;
+}
+
+@media (min-width: 768px) {
+  #contacts.section {
+    padding-top: 60px;
+  }
+}
