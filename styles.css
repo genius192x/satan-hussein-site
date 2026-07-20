@@ -6585,3 +6585,361 @@ button {
     padding-top: 60px;
   }
 }
+
+/* Let the reviews content define the section height, so it cannot run under the footer. */
+#reviews.section {
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  #reviews.section {
+    min-height: 640px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  #reviews.section {
+    min-height: 812px;
+  }
+}
+
+/* Price buttons extend below their cards; reserve that space before the next section. */
+#prices.section {
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  #prices.section {
+    min-height: 650px;
+    padding-bottom: 220px;
+  }
+}
+
+@media (max-width: 767px) {
+  #prices.section {
+    min-height: 812px;
+    padding-bottom: 70px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1007px) {
+  #prices .pricesHeader {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #prices .pricesHeader > div {
+    transform: none;
+  }
+
+  #prices .pricesHeader__note {
+    width: 100%;
+  }
+
+  #prices .pricing {
+    grid-template-columns: 450px;
+    gap: 110px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-nav__overlay {
+    background: rgba(10, 11, 16, 0.62);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .site-nav__overlay::before,
+  .site-nav__overlay::after {
+    content: none;
+  }
+
+  .site-nav__drawer {
+    height: min(447px, 100dvh);
+    min-height: 0;
+    max-height: 447px;
+    background: #dddddd;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .site-nav__drawer-nav {
+    gap: 16px;
+  }
+
+  .site-nav__drawer::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: 60px;
+    background: url("img/footer-top-bg.png") center bottom / 100% 60px no-repeat;
+    pointer-events: none;
+  }
+
+  .site-nav__close,
+  .site-nav__drawer-nav {
+    z-index: 1;
+  }
+
+  #program.section {
+    height: 840px;
+    min-height: 840px;
+  }
+
+  #program .program__panel {
+    min-height: 635px;
+    background-color: #05030c;
+    background-image: url("img/footer-top-bg.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 60px;
+  }
+
+  #program .program__panelInner {
+    padding-top: 80px;
+  }
+}
+
+/* Fluid mobile layout for the content-heavy sections. */
+@media (max-width: 767px) {
+  :root {
+    --mobile-fluid-gutter: clamp(20px, 6.6667vw, 32px);
+  }
+
+  /* About / "Мой путь" */
+  #about.section,
+  #about .twoCol,
+  #about .twoCol__copy {
+    height: auto;
+    min-height: 0;
+  }
+
+  #about .twoCol__copy .h2,
+  #about .twoCol__copy .lead,
+  #about .twoCol__copy .p {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto !important;
+    height: auto;
+    margin-right: var(--mobile-fluid-gutter);
+    margin-left: var(--mobile-fluid-gutter);
+  }
+
+  #about .twoCol__copy .h2 {
+    margin-top: 44px;
+    font-size: clamp(56px, 17.333vw, 65px);
+    line-height: 0.88;
+  }
+
+  #about .twoCol__copy .lead {
+    margin-top: 12px;
+  }
+
+  #about .twoCol__copy .p,
+  #about .twoCol__copy .p:nth-of-type(2),
+  #about .twoCol__copy .p:nth-of-type(3) {
+    top: auto;
+    margin-top: 10px;
+  }
+
+  #about .twoCol__copy .p + .p {
+    margin-top: 14px;
+  }
+
+  #about .collageContainer-mobile {
+    position: relative;
+    inset: auto;
+    width: min(100%, 500px);
+    height: auto;
+    aspect-ratio: 375 / 477;
+    margin: 30px auto 0;
+  }
+
+  #about .collageStats__img-mobile {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  /* Course / "Реальный опыт" */
+  #course.section,
+  #course .course__grid,
+  #course .course__copy[style],
+  #course .course__copy {
+    height: auto;
+    min-height: 0;
+  }
+
+  #course .course__copy[style],
+  #course .course__copy {
+    padding-top: 44px;
+  }
+
+  #course .course__title,
+  #course .course__lead {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    margin-right: var(--mobile-fluid-gutter);
+    margin-left: var(--mobile-fluid-gutter);
+  }
+
+  #course .course__title {
+    font-size: clamp(54px, 17.333vw, 65px);
+    line-height: 0.88;
+  }
+
+  #course .course__lead {
+    margin-top: 12px;
+  }
+
+  #course .course__tape {
+    position: relative;
+    left: -4px;
+    top: auto;
+    width: min(calc(100% - var(--mobile-fluid-gutter)), 430px);
+    margin-top: -3px;
+    background-size: 100% auto;
+  }
+
+  #course .course__list {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - (2 * var(--mobile-fluid-gutter)));
+    margin: 0 var(--mobile-fluid-gutter);
+  }
+
+  #course .course__art {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: min(100%, 500px);
+    height: auto;
+    aspect-ratio: 375 / 380;
+    margin: 8px auto 0;
+  }
+
+  /* Program / "Содержание" */
+  #program.section {
+    height: auto;
+    min-height: 0;
+    padding-top: 44px;
+  }
+
+  #program .program__head {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    margin: 0 var(--mobile-fluid-gutter);
+  }
+
+  #program .program__title,
+  #program .program__lead {
+    width: auto;
+    max-width: none;
+  }
+
+  #program .program__title {
+    font-size: clamp(56px, 17.333vw, 65px);
+    line-height: 0.88;
+  }
+
+  #program .program__panel {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-height: 0;
+    margin-top: 20px;
+  }
+
+  #program .program__panelInner {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 80px var(--mobile-fluid-gutter) 80px;
+  }
+
+  #program .module {
+    grid-template-columns: clamp(64px, 19.733vw, 74px) minmax(0, 1fr);
+    height: auto;
+  }
+
+  #program .module__t {
+    font-size: clamp(20px, 6.4vw, 24px);
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  /* Audience / "Для кого этот курс" */
+  #audience.section {
+    height: auto;
+    min-height: 0;
+    padding: 44px var(--mobile-fluid-gutter) 48px;
+  }
+
+  #audience .audience__head,
+  #audience .audience__body {
+    width: 100%;
+  }
+
+  #audience .audience__title,
+  #audience .audience__lead {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+  }
+
+  #audience .audience__title {
+    font-size: clamp(56px, 17.333vw, 65px);
+    line-height: 0.88;
+  }
+
+  #audience .audience__lead {
+    margin-top: 16px;
+  }
+
+  #audience .audienceStage {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 28px;
+  }
+
+  #audience .audienceCard,
+  #audience .audienceCard--novice,
+  #audience .audienceCard--performer,
+  #audience .audienceCard--red,
+  #audience .audienceCard--engineer {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    min-height: 114px;
+    margin-top: 12px;
+    padding: 13px 15px;
+  }
+
+  #audience .audienceCard:first-child {
+    margin-top: 0;
+  }
+
+  #audience .audienceCard__title,
+  #audience .audienceCard--red .audienceCard__title,
+  #audience .audienceCard__text {
+    max-width: none;
+  }
+}
