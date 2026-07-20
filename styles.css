@@ -2235,7 +2235,6 @@ button {
   pointer-events: none;
   filter: none;
   opacity: 0.96;
-  rotate: 2deg;
 }
 
 .focus__text {
@@ -5585,6 +5584,14 @@ button {
     box-shadow: none;
   }
 
+  #prices .priceCard:not(.priceCard--ended):hover,
+  #prices .priceCard:not(.priceCard--ended):focus-within {
+    background: linear-gradient(180deg, #ffffff, #f2f2f2);
+    color: rgba(11, 12, 16, 0.96);
+    border-color: transparent;
+    box-shadow: 0 32px 90px rgba(0, 0, 0, 0.32);
+  }
+
   #prices .priceCard__label--img {
     top: -31px;
     height: 60px;
@@ -5622,6 +5629,12 @@ button {
 
   #prices .focus__ring {
     inset: -5px -2px;
+    transform: scaleX(1.5);
+  }
+
+  #prices .focus__text {
+    max-width: 260px;
+    margin-inline: auto;
   }
 
   #prices .priceCard__price {
