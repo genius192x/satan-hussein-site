@@ -570,11 +570,13 @@
       </div>
     </section>
 
+    <div class="footerLead">
+      <a class="toTop" href="#top" aria-label="Наверх">
+        <img class="toTop__icon" src="img/about/arrow.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+      </a>
+    </div>
     <footer class="section section--dark" id="contacts">
       <div class="container contacts">
-        <a class="toTop" href="#top" aria-label="Наверх">
-          <img class="toTop__icon" src="img/about/arrow.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-        </a>
         <div class="contacts__grid">
           <div class="contacts__left">
             <h2 class="h2 h2--invert contacts__title">контакты</h2>
@@ -599,14 +601,17 @@
                   <path d="M12 20s5-5.1 5-9.5A5 5 0 1 0 7 10.5C7 14.9 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
                   <circle cx="12" cy="10.5" r="1.6" fill="currentColor" />
                 </svg>
-                <span>Москва, Ул. Нижняя Сыромятическая 10с9</span>
+                <a href="https://yandex.ru/maps/-/CTVCRPOZ" target="_blank" rel="noopener noreferrer">Москва, Ул. Нижняя Сыромятическая 10с9</a>
               </li>
             </ul>
           </div>
 
           <div class="contacts__right">
             <div class="contacts__logos" aria-hidden="true">
-              <img src="img/about/footer-logo.svg" alt="">
+              <picture>
+                <source media="(max-width: 767px)" srcset="img/footer-mobile-logo.png">
+                <img src="img/about/footer-logo.svg" alt="">
+              </picture>
             </div>
             <p class="contacts__foot">
               <span>авторский офлайн курс по сведению от Satan Hussein</span>

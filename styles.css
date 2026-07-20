@@ -3253,15 +3253,19 @@ button {
   .hero__media {
     flex: 0 0 auto;
     width: 100vw;
-    margin-top: -14px;
+    margin-top: 2px;
     margin-left: 50%;
     transform: translateX(-50%);
   }
 
   .hero__collage {
-    width: 400px;
+    position: relative;
+    left: 50%;
+    display: block;
+    width: 430px;
     max-width: none;
-    margin-inline: auto;
+    margin-inline: 0;
+    transform: translateX(-50%);
   }
 
   .hero__mediaNote {
@@ -6409,21 +6413,6 @@ button {
     width: calc(100% + 16px);
     height: 28px;
     background: #f7f8f8;
-    clip-path: polygon(
-      0 37%,
-      7% 34%,
-      15% 40%,
-      24% 36%,
-      32% 43%,
-      42% 38%,
-      51% 45%,
-      62% 40%,
-      73% 43%,
-      84% 37%,
-      100% 31%,
-      100% 100%,
-      0 100%
-    );
     pointer-events: none;
   }
 
@@ -6659,9 +6648,19 @@ button {
     height: min(447px, 100dvh);
     min-height: 0;
     max-height: 447px;
-    background: #dddddd;
-    overflow: hidden;
+    background: transparent;
+    overflow: visible;
     isolation: isolate;
+  }
+
+  .site-nav__drawer::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 18px;
+    z-index: -2;
+    background: #dddddd;
+    clip-path: polygon(0 0, 100% 0, 100% 98%, 0 94%);
+    pointer-events: none;
   }
 
   .site-nav__drawer-nav {
@@ -6671,12 +6670,14 @@ button {
   .site-nav__drawer::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
-    width: 100%;
-    height: 60px;
-    background: url("img/footer-top-bg.png") center bottom / 100% 60px no-repeat;
+    left: -2%;
+    bottom: -1px;
+    z-index: -1;
+    width: 104%;
+    height: 54px;
+    background: url("img/mobile-bg-burger.png") center / 100% 100% no-repeat;
+    transform: rotate(0.7deg);
+    transform-origin: center;
     pointer-events: none;
   }
 
@@ -6941,5 +6942,254 @@ button {
   #audience .audienceCard--red .audienceCard__title,
   #audience .audienceCard__text {
     max-width: none;
+  }
+}
+
+/* Final mobile composition: audience cards and footer match the supplied layout. */
+.footerLead {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  /* The up control belongs to the light transition area, outside the footer. */
+  .footerLead {
+    position: relative;
+    display: block;
+    height: 188px;
+    background: #dddddd;
+  }
+
+  .footerLead .toTop {
+    position: absolute;
+    left: 50%;
+    top: 53px;
+    z-index: 2;
+    display: grid;
+    width: 90px;
+    height: 82px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    transform: translateX(-50%);
+  }
+
+  .footerLead .toTop__icon {
+    width: 90px;
+    height: 74px;
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+
+  #contacts.section {
+    position: relative;
+    height: 626px;
+    min-height: 626px;
+    padding: 0;
+    overflow: hidden;
+    background: #05030c;
+  }
+
+  /* Mirrored torn-paper transition attached to the top edge. */
+  #contacts.section::before {
+    content: "";
+    position: absolute;
+    left: -1%;
+    top: -1px;
+    z-index: 1;
+    display: block;
+    width: 102%;
+    height: 31px;
+    background: url("img/footer-top-bg.png") center top / 100% 31px no-repeat;
+    transform: scaleX(-1);
+    transform-origin: center;
+    pointer-events: none;
+  }
+
+  #contacts .container,
+  #contacts .contacts {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+
+  #contacts .contacts__grid {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  #contacts .contacts__title {
+    left: 50%;
+    top: 91px;
+    width: calc(100% - 40px);
+    font-size: 46px;
+    line-height: 1;
+    transform: translateX(-50%);
+  }
+
+  #contacts .contacts__list {
+    left: 20px;
+    top: 210px;
+    width: calc(100% - 40px);
+    gap: 13px;
+    font-size: clamp(12px, 3.73vw, 14px);
+    line-height: 1.25;
+  }
+
+  #contacts .contacts__list li {
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+
+  #contacts .contacts__icon {
+    width: 19px;
+    height: 19px;
+  }
+
+  #contacts .contacts__logos {
+    left: 50%;
+    top: 405px;
+    width: min(280px, calc(100% - 40px));
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  #contacts .contacts__logos picture,
+  #contacts .contacts__logos img {
+    display: block;
+    width: 100%;
+    max-width: none;
+  }
+
+  #contacts .contacts__foot {
+    left: 50%;
+    top: 548px;
+    width: calc(100% - 40px);
+    gap: 17px;
+    font-size: 8px;
+    line-height: 1.2;
+    transform: translateX(-50%);
+  }
+
+  /* Cards start at alternating screen edges and retain their white surfaces. */
+  #audience.section {
+    padding: 44px 0 58px;
+  }
+
+  #audience .audience__head {
+    box-sizing: border-box;
+    padding: 0 var(--mobile-fluid-gutter);
+  }
+
+  #audience .audience__body,
+  #audience .audienceStage {
+    width: 100%;
+  }
+
+  #audience .audienceStage {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 28px;
+  }
+
+  #audience .audienceStage__collage {
+    position: absolute;
+    top: -25px;
+    right: -4px;
+    left: auto;
+    z-index: 5;
+    display: block;
+    width: 112px;
+    height: auto;
+    margin: 0;
+    transform: scale(-1, -1);
+    pointer-events: none;
+  }
+
+  #audience .audienceCard,
+  #audience .audienceCard--novice,
+  #audience .audienceCard--performer,
+  #audience .audienceCard--red,
+  #audience .audienceCard--engineer {
+    box-sizing: border-box;
+    position: relative;
+    inset: auto;
+    flex: none;
+    height: auto;
+    margin: 0;
+    padding: 25px 25px 27px;
+    border-radius: 0 12px 12px 0;
+    background: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+  }
+
+  #audience .audienceCard::before {
+    content: none;
+  }
+
+  #audience .audienceCard--novice {
+    order: 1;
+    z-index: 2;
+    width: calc(100% - 29px);
+    min-height: 150px;
+    padding-top: 25px;
+    transform: rotate(-0.6deg);
+    transform-origin: left center;
+  }
+
+  #audience .audienceCard--red {
+    order: 2;
+    z-index: 1;
+    width: calc(100% + 16px);
+    min-height: 190px;
+    margin-top: -15px;
+    padding: 30px 36px 32px 32px;
+    border-radius: 0;
+    color: #fdfdfd;
+    background: url("img/mobile-red-bg-card.png") center / 100% 100% no-repeat;
+    box-shadow: none;
+    transform: translateX(-8px) rotate(0.8deg);
+    transform-origin: center;
+  }
+
+  #audience .audienceCard--performer {
+    order: 3;
+    width: calc(100% - 9px);
+    min-height: 150px;
+    padding-top: 27px;
+    transform: rotate(0.55deg);
+    transform-origin: left center;
+  }
+
+  #audience .audienceCard--engineer {
+    order: 4;
+    align-self: flex-end;
+    width: calc(100% - 10px);
+    min-height: 150px;
+    padding: 28px 28px 26px 18px;
+    border-radius: 12px 0 0 12px;
+    transform: rotate(-0.45deg);
+    transform-origin: right center;
+  }
+
+  #audience .audienceCard__title,
+  #audience .audienceCard--red .audienceCard__title {
+    max-width: 100%;
+    font-size: clamp(23px, 7.2vw, 27px);
+    line-height: 0.95;
+  }
+
+  #audience .audienceCard__text,
+  #audience .audienceCard--red .audienceCard__text {
+    max-width: 100%;
+    margin-top: 8px;
+    font-size: clamp(14px, 4vw, 15px);
+    line-height: 1.18;
   }
 }
