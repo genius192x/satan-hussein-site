@@ -7,7 +7,12 @@
   <title>Satan Hussein — курс по сведению</title>
   <meta name="description" content="Авторский офлайн курс по сведению от Satan Hussein на студии Dark Side Records." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="styles.css?v=mobile-figma-pp-20260703" />
+  <link rel="stylesheet" href="styles.css?v=scroll-motion-20260724-2" />
+  <script>
+    if (window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)").matches) {
+      document.documentElement.classList.add("motion-ready");
+    }
+  </script>
 </head>
 
 <body>
@@ -52,7 +57,7 @@
   <main id="content">
     <section class="hero">
       <div class="container">
-        <nav class="hero__nav" aria-label="Основная навигация">
+        <nav class="hero__nav" aria-label="Основная навигация" data-reveal="up" data-reveal-delay="80">
           <a class="hero__navLink" href="#about">обо мне</a>
           <a class="hero__navLink" href="#studio">о студии</a>
           <a class="hero__navLink" href="#course">о курсе</a>
@@ -62,7 +67,7 @@
         </nav>
         <div class="hero__grid">
           <div class="hero__copy">
-            <div class="hero__copy__wrap">
+            <div class="hero__copy__wrap" data-reveal="left" data-reveal-delay="160">
               <h1 class="hero__title">
                 <span class="hero__titleLine">satan</span>
                 <span class="hero__titleLine">hussein</span>
@@ -72,7 +77,7 @@
                 на студии Dark Side Records.
               </p>
             </div>
-            <div class="hero__cta">
+            <div class="hero__cta" data-reveal="down" data-reveal-delay="300">
               <a class="btn btn--primary hero__btn" href="#prices">записаться сейчас!</a>
               <div class="launch" aria-label="Дата запуска">
                 <span class="launch__ring" aria-hidden="true"></span>
@@ -81,7 +86,7 @@
             </div>
           </div>
 
-          <div class="hero__media" aria-hidden="true">
+          <div class="hero__media" aria-hidden="true" data-reveal="right" data-reveal-delay="220">
             <img class="hero__collage" src="img/collage-hero.webp" alt="" loading="eager" decoding="async" />
             <div class="hero__mediaNote" aria-hidden="true">
 							<!-- <img src="img" alt=""> -->
@@ -95,8 +100,9 @@
 
     <section class="section" id="about">
       <div class="container twoCol">
-        <div class="twoCol__media collageStats" aria-label="Достижения">
+        <div class="twoCol__media collageStats" aria-label="Достижения" data-reveal="left">
           <img class="collageStats__img" src="img/collage-about-figma.webp" alt="" loading="lazy" decoding="async" />
+          <img class="collageStats__mark" src="img/small_lines_logo.svg" alt="" aria-hidden="true" />
           <div class="collageStats__labels" aria-hidden="true">
             <div class="collageStats__label collageStats__label--streams">
               <span class="collageStats__small">млрд стримов</span>
@@ -108,24 +114,28 @@
               <span class="collageStats__small">лет опыта</span>
             </div>
           </div>
+          <div class="collageStats__foot" aria-hidden="true">
+            <span>авторский офлайн курс по сведению от Satan Hussein</span>
+            <img src="img/small_lines_logo.svg" alt="" />
+          </div>
         </div>
         <div class="twoCol__copy">
-          <h2 class="h2">мой путь</h2>
-          <p class="lead">От сведения дома до собственной студии в центре Москвы.</p>
-          <p class="p">
+          <h2 class="h2" data-reveal="right">мой путь</h2>
+          <p class="lead" data-reveal="right" data-reveal-delay="70">От сведения дома до собственной студии в центре Москвы.</p>
+          <p class="p" data-reveal="right" data-reveal-delay="120">
             Это не случайность, а результат множества экспериментов, поисков и принятых решений. За любым видимым
             успехом стоит опыт, состоящий из ошибок, и путь без быстрых рецептов и волшебных кнопок.
           </p>
-          <p class="p">
+          <p class="p" data-reveal="right" data-reveal-delay="170">
             Цель моего курса — помочь тебе сократить путь к качественному звуку и создать прочный фундамент, на котором
             ты сможешь уверенно развиваться дальше.
           </p>
 
-          <div class="tape">
+          <div class="tape" data-reveal="down" data-reveal-delay="100">
             <span class="tape__bg" aria-hidden="true"></span>
             <span class="tape__text">работал над релизами:</span>
           </div>
-          <div class="collageContainer-mobile">
+          <div class="collageContainer-mobile" data-reveal="down" data-reveal-delay="160">
             <div class="ovals-mobile">
               <div class="oval oval-bittuev">
                 <span class="oval__ring" aria-hidden="true"></span>
@@ -160,7 +170,7 @@
             </div>
           </div>
 
-          <div class="ovals">
+          <div class="ovals" data-reveal="down" data-reveal-delay="160">
             <div class="oval oval-bittuev">
               <span class="oval__ring" aria-hidden="true"></span>
               <div class="oval__text">
@@ -191,12 +201,12 @@
     </section>
 		<section class="section" id="studio">
       <div class="container studio__inner">
-        <div class="studio__head">
+        <div class="studio__head" data-reveal="up">
           <h2 class="h2 studio__title">dark side rec.</h2>
           <p class="lead studio__lead">Видео-экскурсия по студии DSR, где проходит обучение и создаются треки студентов курса.</p>
         </div>
 
-        <div class="studio__stage" aria-label="Видео-экскурсия">
+        <div class="studio__stage" aria-label="Видео-экскурсия" data-video-reveal>
           <div class="studio__black">
             <iframe
               class="studio__video"
@@ -205,6 +215,8 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
               loading="lazy"></iframe>
+            <span class="studio__curtain studio__curtain--top" aria-hidden="true"></span>
+            <span class="studio__curtain studio__curtain--bottom" aria-hidden="true"></span>
           </div>
           <img class="studio__chrome studio__chrome--bottom" src="img/figma-studio-video-bottom-desktop.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
           <img class="studio__chrome studio__chrome--top" src="img/figma-studio-video-top-desktop.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
@@ -212,7 +224,7 @@
         </div>
 
         <img class="studio__tape" src="img/figma-studio-tape-desktop.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" />
-        <div class="studio__foot" aria-hidden="true">
+        <div class="studio__foot" aria-hidden="true" data-reveal="down">
           <span>авторский офлайн курс по сведению от Satan Hussein</span>
           <span class="studio__zigzag"></span>
         </div>
@@ -221,14 +233,14 @@
 		<section class="section course" id="course">
       <div class="container course__grid">
         <div class="course__copy">
-          <h2 class="h2 course__title">реальный&nbsp;&nbsp;опыт</h2>
-          <p class="lead course__lead">Ты пройдешь обучение на настоящей студии <br/> и увидишь как всё работает изнутри.</p>
+          <h2 class="h2 course__title" data-reveal="left">реальный&nbsp;&nbsp;опыт</h2>
+          <p class="lead course__lead" data-reveal="left" data-reveal-delay="80">Ты пройдешь обучение на настоящей студии <br/> и увидишь как всё работает изнутри.</p>
 
-          <div class="course__tape" aria-hidden="true">
+          <div class="course__tape" aria-hidden="true" data-reveal="down">
             <span class="course__tapeText">на этом курсе тебя ждёт:</span>
           </div>
 
-          <ul class="course__list">
+          <ul class="course__list" data-reveal="down" data-reveal-delay="90">
             <span class="course__listRail" aria-hidden="true"></span>
             <li>11 информационных модулей</li>
             <li>Уроки в режиме оффлайн и онлайн</li>
@@ -240,7 +252,7 @@
             <li>Годовой доступ в закрытый канал Satan Hussein</li>
           </ul>
 
-          <div class="course__certificate">
+          <div class="course__certificate" data-reveal="down" data-reveal-delay="150">
             <img class="course__certificatePlus" src="img/figma-course-plus-desktop.svg" alt="" aria-hidden="true" loading="lazy"
               decoding="async" />
             <p class="course__certificateText">
@@ -249,7 +261,7 @@
           </div>
         </div>
 
-        <div class="course__art" aria-label="66 дней обучения, 11 модулей">
+        <div class="course__art" aria-label="66 дней обучения, 11 модулей" data-reveal="right">
           <img class="course__collage course__collage--desktop" src="img/figma-course-collage-desktop.webp" alt="" loading="lazy" decoding="async" />
           <img class="course__collage course__collage--mobile" src="img/experience-mobile-collage.webp" alt="" loading="lazy" decoding="async" />
           <div class="course__labels" aria-hidden="true">
@@ -257,14 +269,14 @@
             <div class="course__label course__label--modules">модулей</div>
           </div>
         </div>
-        <div class="course__foot" aria-hidden="true">
+        <div class="course__foot" aria-hidden="true" data-reveal="down">
           <span>авторский офлайн курс по сведению от Satan Hussein</span>
           <span class="course__zigzag"></span>
         </div>
       </div>
     </section>
     <section class="section program" id="program">
-      <div class="program__head">
+      <div class="program__head" data-reveal="up">
         <h2 class="h2 program__title">содержание</h2>
         <p class="lead program__lead">
           Уроки проходят в режиме оффлайн, но также ты получаешь записанные копии уроков, чтобы в любой момент обновить
@@ -272,7 +284,7 @@
         </p>
       </div>
 
-      <div class="program__panel" aria-label="Модули курса">
+      <div class="program__panel" aria-label="Модули курса" data-reveal="down">
         <div class="program__panelInner">
           <div class="program__cols">
             <ol class="program__col" aria-label="Модули 1-4">
@@ -333,7 +345,7 @@
     </section>
 
     <section class="section audience" id="audience">
-      <div class="container audience__head">
+      <div class="container audience__head" data-reveal="up">
         <h2 class="h2 audience__title">для кого этот курс</h2>
         <p class="lead audience__lead">
           Для тех, кто хочет уверенно работать со звуком — от новичков до практикующих музыкантов.
@@ -342,7 +354,7 @@
 
       <div class="container audience__body">
         <div class="audienceStage" aria-label="Для кого этот курс">
-          <article class="audienceCard audienceCard--novice">
+          <article class="audienceCard audienceCard--novice" data-reveal="left">
             <h3 class="audienceCard__title">новичкам</h3>
             <p class="audienceCard__text">
               Ты получишь понятную базу по сведению и мастерингу: разберёшься в основных инструментах, логике работы со
@@ -350,7 +362,7 @@
             </p>
           </article>
 
-          <article class="audienceCard audienceCard--performer">
+          <article class="audienceCard audienceCard--performer" data-reveal="right">
             <h3 class="audienceCard__title">исполнителям</h3>
             <p class="audienceCard__text">
               Ты научишься делать качественные демо своих треков дома и начнёшь понимать язык звукорежиссёров. Это
@@ -358,7 +370,7 @@
             </p>
           </article>
 
-          <article class="audienceCard audienceCard--red">
+          <article class="audienceCard audienceCard--red" data-reveal="left" data-reveal-delay="80">
             <h3 class="audienceCard__title">музыкантам, аранжировщикам и битмейкерам</h3>
             <p class="audienceCard__text">
               Ты научишься самостоятельно делать качественные демо и финальные версии треков. Это упростит работу в
@@ -366,21 +378,21 @@
             </p>
           </article>
 
-          <article class="audienceCard audienceCard--engineer">
+          <article class="audienceCard audienceCard--engineer" data-reveal="right" data-reveal-delay="80">
             <h3 class="audienceCard__title">начинающим звукорежиссерам</h3>
             <p class="audienceCard__text">
               Ты систематизируешь свои знания, закроешь слабые места в сведении и поймёшь, почему раньше возникали
               сложности. В итоге повысишь стабильность и качество своих работ.
             </p>
           </article>
-          <img class="audienceStage__collage" src="img/for/5.5 1.svg" alt="" aria-hidden="true" loading="lazy"
+          <img class="audienceStage__collage" src="img/for/5.5 1.svg" alt="" aria-hidden="true" loading="lazy" data-reveal="down" data-reveal-delay="150"
             decoding="async" />
         </div>
       </div>
     </section>
 		<section class="section section--dark"  id="prices">
       <div class="container">
-        <div class="pricesHeader">
+        <div class="pricesHeader" data-reveal="up">
           <div>
             <h2 class="h2 h2--invert">цены на курс</h2>
           </div>
@@ -390,7 +402,7 @@
         </div>
 
         <div class="pricing">
-          <article class="priceCard priceCard--ended">
+          <article class="priceCard priceCard--ended" data-reveal="left">
 						<div class="priceCard__soldOverlay" aria-hidden="true"></div>
             <div class="priceCard__label priceCard__label--img priceCard__label--standart" aria-label="Стандарт">
               <span class="priceCard__labelText" aria-hidden="true">Стандарт</span>
@@ -412,7 +424,7 @@
               aria-disabled="true">оплатить “стандарт”</button>
           </article>
 
-          <article class="priceCard priceCard--plus">
+          <article class="priceCard priceCard--plus" data-reveal="right">
             <div class="priceCard__label priceCard__label--img priceCard__label--plusTape" aria-label="Плюс">
               <span class="priceCard__labelText" aria-hidden="true" >ПЛЮС</span>
             </div>
@@ -432,18 +444,18 @@
               “плюс”</a>
           </article>
 
-          <img class="about_img" src="img/about/collage-bottom.svg" alt="">
+          <img class="about_img" src="img/about/collage-bottom.svg" alt="" data-reveal="down">
         </div>
       </div>
     </section>
 
     <section class="section" id="reviews">
       <div class="container">
-        <h2 class="h2 reviews__title">отзывы о курсе</h2>
-        <p class="lead">Отзывы тех, кто прошёл курс, работал в студии и увидел результат в своих треках.</p>
+        <h2 class="h2 reviews__title" data-reveal="left">отзывы о курсе</h2>
+        <p class="lead" data-reveal="left" data-reveal-delay="80">Отзывы тех, кто прошёл курс, работал в студии и увидел результат в своих треках.</p>
 
         <div class="reviews" data-reviews>
-          <div class="reviews__viewport swiper" data-reviews-viewport role="region" aria-label="Отзывы (слайдер)">
+          <div class="reviews__viewport swiper" data-reviews-viewport role="region" aria-label="Отзывы (слайдер)" data-reveal="right">
             <div class="swiper-wrapper">
             <article class="review swiper-slide review--bleu" id="review-1">
               <div class="review__body">
@@ -559,7 +571,7 @@
             </div>
           </div>
 
-          <div class="reviews__controls">
+          <div class="reviews__controls" data-reveal="down">
             <button class="reviewArrow" type="button" aria-label="Предыдущий отзыв" data-reviews-prev>
               <img class="reviewArrow__icon reviewArrow__icon--prev" src="img/about/arrow.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
             </button>
@@ -625,6 +637,8 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="bundles/anime.umd.min.js"></script>
+  <script src="animations.js?v=20260724-2"></script>
   <script>
     (() => {
       const navRoot = document.querySelector("[data-site-nav]");

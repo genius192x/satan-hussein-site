@@ -73,6 +73,53 @@ body {
   height: 100%;
 }
 
+.studio__curtain {
+  display: none;
+  position: absolute;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 50.5%;
+  background: var(--bg);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.studio__curtain--top {
+  top: 0;
+}
+
+.studio__curtain--bottom {
+  bottom: 0;
+}
+
+.studio__stage.is-video-revealed .studio__curtain {
+  visibility: hidden;
+}
+
+/* Desktop-only scroll reveals. `translate` preserves collage rotations/transforms. */
+@media (min-width: 768px) {
+  html.motion-ready [data-reveal] {
+    opacity: 0;
+    translate: var(--motion-x, 0px) var(--motion-y, 0px);
+    will-change: opacity, translate;
+  }
+
+  html.motion-ready [data-reveal].is-revealed {
+    will-change: auto;
+  }
+
+  html.motion-ready .studio__chrome {
+    translate: 0 var(--studio-cover-y, 0px);
+    will-change: translate;
+  }
+
+  html.motion-ready .studio__curtain {
+    display: block;
+  }
+
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 16px;
@@ -99,6 +146,16 @@ body {
     transition-duration: 0.001ms !important;
     animation-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  [data-reveal],
+  .studio__chrome {
+    opacity: 1 !important;
+    translate: none !important;
+  }
+
+  .studio__curtain {
+    display: none;
   }
 }
 
@@ -917,7 +974,7 @@ button {
   flex: 0 0 28px;
   width: 28px;
   height: 10px;
-  background: url("img/zigzag.webp") center / contain no-repeat;
+  background: url("img/small_lines_logo.svg") center / contain no-repeat;
 }
 
 @media (max-width: 1439px) and (min-width: 1024px) {
@@ -1157,6 +1214,35 @@ button {
 #about .collageStats__img {
   width: 841px;
   max-width: none;
+}
+
+#about .collageStats__mark {
+  position: absolute;
+  left: 600px;
+  top: 424px;
+  width: 66px;
+  height: auto;
+}
+
+#about .collageStats__foot {
+  position: absolute;
+  left: 190px;
+  top: 934px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f9fafa;
+  font-family: "Gilroy", system-ui, sans-serif;
+  font-size: 9px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+#about .collageStats__foot img {
+  width: 26px;
+  height: 7px;
+  filter: invert(1);
 }
 
 #about .collageStats__labels {
@@ -3674,18 +3760,6 @@ button {
 
 
 
-#studio .container>div[style] {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  gap: 10px !important;
-}
-
-#studio .container>div[style] .lead {
-  width: auto !important;
-  max-width: none !important;
-}
-
 .video {
   height: 260px;
 }
@@ -4205,6 +4279,28 @@ button {
   transform: rotate(179.6deg) scaleY(-1);
 }
 
+@media (min-width: 768px) {
+  /* Keep the torn-paper chrome flush with the viewport on screens wider than the 1440px artboard. */
+  .studio__chrome {
+    width: max(1779px, calc(100vw + 360px));
+  }
+
+  .studio__chrome--bottom {
+    left: calc(50% - 12px);
+    transform: translateX(-50%);
+  }
+
+  .studio__chrome--top {
+    left: calc(50% - 104px);
+    transform: translateX(-50%);
+  }
+
+  .studio__tape {
+    right: min(-96px, calc(624px - 50vw));
+    left: auto;
+  }
+}
+
 .studio__foot,
 .course__foot {
   position: absolute;
@@ -4231,7 +4327,7 @@ button {
 .course__zigzag {
   width: 36px;
   height: 30px;
-  background: url("img/zigzag.webp") center / 28px 10px no-repeat;
+  background: url("img/small_lines_logo.svg") center / contain no-repeat;
 }
 
 /* Course / Page 4 */
