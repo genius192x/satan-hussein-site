@@ -1206,7 +1206,7 @@ button {
 #about .collageStats {
   position: absolute;
   left: -2px;
-  top: -95px;
+  top: 0px;
   width: 841px;
   height: 1262px;
 }
@@ -4869,7 +4869,7 @@ button {
   #program .program__cols {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: clamp(36px, 5vw, 76px);
-    padding-inline: clamp(24px, 5.55vw, 80px);
+    padding-inline: clamp(24px, 1.55vw, 80px);
   }
 
   #program .program__col {
@@ -6653,16 +6653,29 @@ button {
   }
 }
 
+#program .program__panel::after {
+	content: '';
+	position: absolute;
+	right: 20%;
+	bottom: 17px;
+	width: 201px;
+	height: 101px;
+	border-radius: 0;
+	background: url("img/red-logo-l.png")center / 201px 101px no-repeat;
+	transform: none;
+}
 @media (max-width: 767px) {
-  #program .program__panel::after {
-    right: 26px;
-    bottom: 17px;
-    width: 110px;
-    height: 60px;
-    border-radius: 0;
-    background: url("img/rec-red-bage.webp") center / 110px 60px no-repeat;
-    transform: none;
-  }
+	#program .program__panel::after {
+		content: '';
+		position: absolute;
+		right: 26px;
+		bottom: 17px;
+		width: 110px;
+		height: 60px;
+		border-radius: 0;
+		background: url("img/rec-red-bage.webp") center / 110px 60px no-repeat;
+		transform: none;
+	}
 }
 
 /* Footer transition: the source is exported at 2x (120px), so it renders at 60px. */
