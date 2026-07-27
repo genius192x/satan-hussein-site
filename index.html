@@ -101,7 +101,7 @@
     <section class="section" id="about">
       <div class="container twoCol">
         <div class="twoCol__media collageStats" aria-label="Достижения" data-reveal="left">
-          <img class="collageStats__img" src="img/collage-about2.png" alt="" loading="lazy" decoding="async" />
+          <img class="collageStats__img" src="img/collage-about2.webp" alt="" loading="lazy" decoding="async" />
           <img class="collageStats__mark" src="img/small_lines_logo.svg" alt="" aria-hidden="true" />
           <div class="collageStats__labels" aria-hidden="true">
             <!-- <div class="collageStats__label collageStats__label--streams">
@@ -208,13 +208,15 @@
 
         <div class="studio__stage" aria-label="Видео-экскурсия" data-video-reveal>
           <div class="studio__black">
-            <iframe
-              class="studio__video"
-              src="https://www.youtube.com/embed/LJR9cGuu3yQ?si=VZ2dc4B62Mi1p7eP"
-              title="Видео-экскурсия по студии"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              loading="lazy"></iframe>
+            <div class="studio__video-frame">
+              <iframe
+                class="studio__video"
+                src="https://www.youtube.com/embed/LJR9cGuu3yQ?si=VZ2dc4B62Mi1p7eP"
+                title="Видео-экскурсия по студии"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"></iframe>
+            </div>
             <span class="studio__curtain studio__curtain--top" aria-hidden="true"></span>
             <span class="studio__curtain studio__curtain--bottom" aria-hidden="true"></span>
           </div>
@@ -596,24 +598,21 @@
 
             <ul class="contacts__list">
               <li>
-                <svg class="contacts__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 6.5h16v11H4z" fill="none" stroke="currentColor" stroke-width="1.8" />
-                  <path d="m5.5 7.5 6.5 5 6.5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.551743 0.92882L6.68764 5.77566C6.83819 5.89497 6.83819 6.10576 6.68764 6.22507L0.551743 11.0712C0.336905 11.241 0 11.1034 0 10.8465V1.15352C0 0.896615 0.336905 0.759012 0.551743 0.92882ZM8.78069 6.34291L1.41272 0.52333C1.18242 0.34108 1.32565 0 1.63244 0H16.3684C16.6752 0 16.8184 0.341812 16.5881 0.52333L9.22013 6.34291C9.09481 6.44172 8.90682 6.44172 8.7815 6.34291H8.78069ZM7.44039 6.71619C7.56571 6.61738 7.7537 6.61738 7.87902 6.71619L8.70094 7.36542C8.78638 7.43275 8.89299 7.46715 9.00041 7.46715C9.10783 7.46715 9.21362 7.43349 9.29988 7.36542L10.1218 6.71619C10.2471 6.61738 10.4351 6.61738 10.5604 6.71619L16.5873 11.4767C16.8176 11.6589 16.6744 12 16.3676 12H1.63163C1.32483 12 1.18161 11.6582 1.41191 11.4767L7.43958 6.71619H7.44039ZM11.3124 5.77566L17.4483 0.92882C17.6631 0.759012 18 0.896615 18 1.15352V10.8472C18 11.1041 17.6631 11.2417 17.4483 11.0719L11.3124 6.22507C11.1618 6.10576 11.1618 5.89497 11.3124 5.77566Z" fill="#DDDDDD"/>
+								</svg>
                 <a href="mailto:darksiderecordsofficial@gmail.com">darksiderecordsofficial@gmail.com</a>
               </li>
               <li>
-                <svg class="contacts__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 12.5 19.5 4.5 15.6 19.5 10.9 13.1 4 12.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-                  <path d="M10.9 13.1 19.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                </svg>
+                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1.10474 6.5387C1.10474 6.5387 9.06606 3.24235 11.8277 2.08319C12.888 1.61832 16.4763 0.133143 16.4763 0.133143C16.4763 0.133143 18.1296 -0.518884 17.9918 1.06288C17.9439 1.71491 17.5785 3.98493 17.2071 6.44211C16.656 9.91959 16.0569 13.7231 16.0569 13.7231C16.0569 13.7231 15.9671 14.7917 15.1823 14.9728C14.3976 15.16 13.1096 14.3268 12.882 14.1397C12.6963 14.0008 9.43148 11.9119 8.23338 10.8916C7.9099 10.6139 7.54448 10.0584 8.28131 9.40642C9.93468 7.87898 11.9175 5.97724 13.1096 4.76978C13.6607 4.21435 14.2119 2.91633 11.9115 4.49206C8.64673 6.76208 5.42386 8.89928 5.42386 8.89928C5.42386 8.89928 4.68703 9.36416 3.30923 8.94758C1.93142 8.53101 0.319987 7.97558 0.319987 7.97558C0.319987 7.97558 -0.782258 7.28129 1.10474 6.5387Z" fill="#DDDDDD"/>
+								</svg>
                 <a href="https://t.me/DarkSideRecords" aria-label="Telegram">@DarkSideRecords</a>
               </li>
               <li>
-                <svg class="contacts__icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 20s5-5.1 5-9.5A5 5 0 1 0 7 10.5C7 14.9 12 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
-                  <circle cx="12" cy="10.5" r="1.6" fill="currentColor" />
-                </svg>
+                <svg width="12" height="15" viewBox="0 0 12 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M10.1241 1.57529C8.98528 0.525037 7.49262 0 5.99996 0C4.5073 0 3.01464 0.525037 1.87583 1.57529C-0.401985 3.67563 -0.700912 6.6413 1.50716 9.65089C2.62838 11.179 5.99996 15 5.99996 15C5.99996 15 9.37154 11.179 10.4928 9.65089C12.701 6.6413 12.4019 3.67563 10.1241 1.57529ZM5.99996 8.76896C4.06158 8.76896 2.49008 7.31992 2.49008 5.53257C2.49008 3.74522 4.06158 2.29617 5.99996 2.29617C7.93835 2.29617 9.50984 3.74522 9.50984 5.53257C9.50984 7.31992 7.93835 8.76896 5.99996 8.76896Z" fill="#DDDDDD"/>
+								</svg>
                 <a href="https://yandex.ru/maps/-/CTVCRPOZ" target="_blank" rel="noopener noreferrer">Москва, Ул. Нижняя Сыромятическая 10с9</a>
               </li>
             </ul>
