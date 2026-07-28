@@ -2271,6 +2271,7 @@ button {
 .priceCard--ended {
   z-index: 1;
   pointer-events: none;
+  background: #05030c;
 }
 
 .priceCard--ended,
@@ -2437,7 +2438,41 @@ button {
   display: block;
 }
 
-.priceCard--ended > :not(.priceCard__soldState) {
+.priceCard__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: inherit;
+}
+
+.priceCard--ended .priceCard__content {
+  opacity: 0.1;
+}
+
+.priceCard__labelMask {
+  display: none;
+}
+
+.priceCard--ended .priceCard__labelMask {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: -42px;
+  display: block;
+  width: 380px;
+  height: 95px;
+  background: #05030c;
+  clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+  transform: translateX(-50%) rotate(-1.5deg);
+}
+
+.priceCard--ended .priceCard__label {
+  z-index: 5;
   opacity: 0.1;
 }
 
@@ -2450,6 +2485,7 @@ button {
 }
 #prices .priceCard.priceCard--ended{
 	border-color:rgba(255, 255, 255, 0.08);
+	background:#05030c;
 }
 
 .priceCard--ended .priceCard__btn--active {
@@ -2546,8 +2582,8 @@ button {
 .priceCard--ended .priceCard__btn--ended {
   z-index: 5;
   background: #05030c;
-  color: rgba(255, 255, 255, 0.46);
-  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
   cursor: not-allowed;
 }
 
@@ -4410,6 +4446,38 @@ button {
   background: url("img/small_lines_logo.svg") center / contain no-repeat;
 }
 
+.section__foot {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .section__foot {
+    position: absolute;
+    z-index: 6;
+    left: 50%;
+    bottom: 28px;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-family: "Gilroy-Medium", "Gilroy", system-ui, sans-serif;
+    font-size: 7px;
+    line-height: 12px;
+    color: #05030c;
+    transform: translateX(-50%);
+  }
+
+  .section__foot > span:first-child {
+    width: 198px;
+    padding: 10px 6px 10px 10px;
+  }
+
+  .section__zigzag {
+    width: 36px;
+    height: 30px;
+    background: url("img/small_lines_logo.svg") center / contain no-repeat;
+  }
+}
+
 /* Course / Page 4 */
 #course.section {
   position: relative;
@@ -5780,6 +5848,12 @@ button {
 
   #prices .priceCard__label--plusTape {
     width: 197px;
+  }
+
+  #prices .priceCard--ended .priceCard__labelMask {
+    top: -31px;
+    width: 222px;
+    height: 60px;
   }
 
   #prices .priceCard__labelText {

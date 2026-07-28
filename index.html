@@ -7,7 +7,7 @@
   <title>Satan Hussein — курс по сведению</title>
   <meta name="description" content="Авторский офлайн курс по сведению от Satan Hussein на студии Dark Side Records." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="styles.css?v=svg-draw-20260728" />
+  <link rel="stylesheet" href="styles.css?v=price-ended-mask-20260728" />
   <script>
     if (window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)").matches) {
       document.documentElement.classList.add("motion-ready");
@@ -348,6 +348,10 @@
           </div>
         </div>
       </div>
+      <div class="section__foot program__foot" aria-hidden="true">
+        <span>авторский офлайн курс по сведению от Satan Hussein</span>
+        <span class="section__zigzag"></span>
+      </div>
     </section>
 
     <section class="section audience" id="audience">
@@ -395,6 +399,10 @@
             decoding="async" />
         </div>
       </div>
+      <div class="section__foot audience__foot" aria-hidden="true">
+        <span>авторский офлайн курс по сведению от Satan Hussein</span>
+        <span class="section__zigzag"></span>
+      </div>
     </section>
 		<section class="section section--dark"  id="prices">
       <div class="container">
@@ -410,22 +418,25 @@
         <div class="pricing">
           <article class="priceCard priceCard--ended" data-reveal="left">
 						<div class="priceCard__soldOverlay" aria-hidden="true"></div>
+            <div class="priceCard__labelMask" aria-hidden="true"></div>
             <div class="priceCard__label priceCard__label--img priceCard__label--standart" aria-label="Стандарт">
               <span class="priceCard__labelText" aria-hidden="true">Стандарт</span>
             </div>
-            <div class="priceCard__body">
-              <p>11 модулей — оффлайн обучение</p>
-              <p>+ материалы курса в онлайне</p>
-              <p>Практические занятия</p>
-              <p>Посещение студии</p>
-              <p>Доступ в закрытый канал</p>
+            <div class="priceCard__content">
+              <div class="priceCard__body">
+                <p>11 модулей — оффлайн обучение</p>
+                <p>+ материалы курса в онлайне</p>
+                <p>Практические занятия</p>
+                <p>Посещение студии</p>
+                <p>Доступ в закрытый канал</p>
+              </div>
+              <div class="priceCard__price"><span class="priceCard__num">40 000</span> <span>руб.</span></div>
+              <a class="btn btn--ghost btn--price priceCard__btn priceCard__btn--active" href="#"
+                aria-label="Оплатить тариф стандарт">оплатить “стандарт”</a>
             </div>
-            <div class="priceCard__price"><span class="priceCard__num">40 000</span> <span>руб.</span></div>
             <div class="priceCard__soldState" role="status">
               <div class="priceCard__ended">места закончились</div>
             </div>
-            <a class="btn btn--ghost btn--price priceCard__btn priceCard__btn--active" href="#"
-              aria-label="Оплатить тариф стандарт">оплатить “стандарт”</a>
             <button class="btn btn--ghost btn--price priceCard__btn priceCard__btn--ended" type="button" disabled
               aria-disabled="true">оплатить “стандарт”</button>
           </article>
