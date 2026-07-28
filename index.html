@@ -7,7 +7,7 @@
   <title>Satan Hussein — курс по сведению</title>
   <meta name="description" content="Авторский офлайн курс по сведению от Satan Hussein на студии Dark Side Records." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="styles.css?v=scroll-motion-20260724-2" />
+  <link rel="stylesheet" href="styles.css?v=svg-draw-20260728" />
   <script>
     if (window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)").matches) {
       document.documentElement.classList.add("motion-ready");
@@ -78,9 +78,9 @@
               </p>
             </div>
             <div class="hero__cta" data-reveal="down" data-reveal-delay="300">
-              <a class="btn btn--primary hero__btn" href="#prices">записаться сейчас!</a>
+              <a class="btn btn--primary hero__btn" href="#prices"><span>записаться сейчас!</span></a>
               <div class="launch" aria-label="Дата запуска">
-                <span class="launch__ring" aria-hidden="true"></span>
+                <object class="launch__ring" data-launch-ring data="img/ring-with-stroke.svg?v=20260728-2" type="image/svg+xml" aria-hidden="true" tabindex="-1"></object>
                 <span class="launch__text">запуск курса — 13 марта</span>
               </div>
             </div>
@@ -172,24 +172,28 @@
 
           <div class="ovals" data-reveal="down" data-reveal-delay="160">
             <div class="oval oval-bittuev">
+              <object class="oval__draw" data-svg-draw data="img/about-oval-bittuev-figma.svg" type="image/svg+xml" aria-hidden="true" tabindex="-1"></object>
               <span class="oval__ring" aria-hidden="true"></span>
               <div class="oval__text">
                 <div>Bittuev — Братик</div>
               </div>
             </div>
             <div class="oval oval-mayot">
+              <object class="oval__draw" data-svg-draw data="img/about-oval-mayot-figma.svg" type="image/svg+xml" aria-hidden="true" tabindex="-1"></object>
               <span class="oval__ring" aria-hidden="true"></span>
               <div class="oval__text">
                 <div>G4OUR, MAYOT — Растёт</div>
               </div>
             </div>
             <div class="oval oval-ram">
+              <object class="oval__draw" data-svg-draw data="img/about-oval-ram-figma.svg" type="image/svg+xml" aria-hidden="true" tabindex="-1"></object>
               <span class="oval__ring" aria-hidden="true"></span>
               <div class="oval__text">
                 <div>RAM — Работяга</div>
               </div>
             </div>
             <div class="oval oval-obla">
+              <object class="oval__draw" data-svg-draw data="img/about-oval-obla-figma.svg" type="image/svg+xml" aria-hidden="true" tabindex="-1"></object>
               <span class="oval__ring" aria-hidden="true"></span>
               <div class="oval__text">
                 <div>Obladaet — 00:00</div>
@@ -637,7 +641,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="bundles/anime.umd.min.js"></script>
-  <script src="animations.js?v=20260724-2"></script>
+  <script src="animations.js?v=svg-draw-fast-20260728"></script>
   <script>
     (() => {
       const navRoot = document.querySelector("[data-site-nav]");
