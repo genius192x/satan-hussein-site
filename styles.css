@@ -6911,6 +6911,13 @@ button {
   }
 }
 
+/* At browser zoom-out the CSS viewport can exceed 1920px; keep room for the price buttons. */
+@media (min-width: 1921px) {
+  #prices.section {
+    padding-bottom: 320px;
+  }
+}
+
 @media (max-width: 767px) {
   #prices.section {
     min-height: 812px;
