@@ -5768,7 +5768,7 @@ button {
   }
 
   .hero {
-    height: 812px;
+    height: 820px;
     min-height: 812px;
     padding-top: 54px;
   }
@@ -5838,7 +5838,7 @@ button {
     display: grid;
     grid-template-columns: 1fr;
     gap: 95px;
-    width: 325px;
+    width: 100%;
     margin: 50px auto 0;
   }
 
