@@ -7551,6 +7551,10 @@ button {
 
 /* Mobile reviews: cards extend edge-to-edge; paired short reviews stay compact. */
 @media (max-width: 767px) {
+  #reviews .reviews__controls {
+    display: none;
+  }
+
   #reviews .reviews__viewport {
     padding-right: 0;
     padding-left: 0;

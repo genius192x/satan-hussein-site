@@ -845,6 +845,46 @@
         swiper.on("slideChange", syncDisabled);
         swiper.on("resize", syncDisabled);
         syncDisabled();
+
+        const mobileReviews = window.matchMedia("(max-width: 767px)");
+        let swipeHintShown = false;
+        let swipeHintTimer = 0;
+        let reviewsAreVisible = false;
+
+        const cancelSwipeHint = () => {
+          if (!swipeHintTimer) return;
+          window.clearTimeout(swipeHintTimer);
+          swipeHintTimer = 0;
+        };
+
+        swiper.on("touchStart", () => {
+          swipeHintShown = true;
+          cancelSwipeHint();
+        });
+
+        if ("IntersectionObserver" in window) {
+          const reviewsObserver = new IntersectionObserver((entries) => {
+            reviewsAreVisible = entries[0].isIntersecting;
+
+            if (!reviewsAreVisible) {
+              cancelSwipeHint();
+              return;
+            }
+
+            if (swipeHintShown || !mobileReviews.matches || swiper.activeIndex !== 0) return;
+
+            swipeHintTimer = window.setTimeout(() => {
+              swipeHintTimer = 0;
+              if (!reviewsAreVisible || !mobileReviews.matches || swiper.activeIndex !== 0) return;
+
+              swipeHintShown = true;
+              swiper.slideNext(700);
+              reviewsObserver.disconnect();
+            }, 500);
+          }, { threshold: 0.35 });
+
+          reviewsObserver.observe(viewport);
+        }
       }
     })();
   </script>
