@@ -2726,6 +2726,12 @@ button {
   justify-items: center;
 }
 
+/* Both compact testimonials belong to one carousel step. */
+.review-pair {
+  display: grid;
+  gap: clamp(70px, 7vw, 108px);
+}
+
 .review--short .review__body {
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
   width: min(var(--short-card), 100%);
@@ -5809,6 +5815,10 @@ button {
     color: #fdfdfd;
   }
 
+  #reviews .review-pair {
+    gap: 74px;
+  }
+
   #prices .pricing {
     display: grid;
     grid-template-columns: 1fr;
@@ -6897,6 +6907,22 @@ button {
   #reviews.section {
     min-height: 812px;
   }
+
+  /* Use the available viewport width on every phone, not a fixed 375px artboard. */
+  #reviews .reviews {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+  }
+
+  #reviews .review,
+  #reviews .review-pair {
+    width: 100%;
+  }
+
+  #reviews .review__body {
+    box-sizing: border-box;
+    width: 100%;
+  }
 }
 
 /* Price buttons extend below their cards; reserve that space before the next section. */
@@ -7504,5 +7530,29 @@ button {
     margin-top: 8px;
     font-size: clamp(14px, 4vw, 15px);
     line-height: 1.18;
+  }
+}
+
+/* Mobile reviews: cards extend edge-to-edge; paired short reviews stay compact. */
+@media (max-width: 767px) {
+  #reviews .reviews__viewport {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  #reviews .review,
+  #reviews .review-pair,
+  #reviews .review__body {
+    width: 100%;
+  }
+
+  #reviews .review-pair {
+    gap: 54px;
+  }
+
+  #reviews .review-pair .review--short .review__body {
+    min-height: 172px;
+    padding-top: 56px;
+    padding-bottom: 22px;
   }
 }
