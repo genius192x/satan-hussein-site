@@ -6044,7 +6044,8 @@ button {
 
   #reviews .reviews__controls {
     position: absolute;
-    left: 90px;
+    left: 50%;
+		transform: translateX(-50%);
     top: 692px;
     width: 194px;
     height: 65px;
@@ -7547,12 +7548,58 @@ button {
   }
 
   #reviews .review-pair {
-    gap: 54px;
+    gap: 80px;
   }
 
   #reviews .review-pair .review--short .review__body {
-    min-height: 172px;
-    padding-top: 56px;
-    padding-bottom: 22px;
+    min-height: 0;
+    box-shadow: none;
+  }
+
+  #reviews .review-pair .review--short {
+    --short-head-x: 0px;
+  }
+
+  #reviews .review-pair .review--short .review__tag {
+    min-height: 60px;
+    padding: 12px 16px;
+  }
+
+  #reviews .review-pair .review--short .review__role {
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  #reviews .review-pair .review--ulitsa {
+    --short-head-y: -29px;
+  }
+
+  #reviews .review-pair .review--ulitsa .review__tag {
+    width: 258px;
+  }
+
+  #reviews .review-pair .review--ulitsa .review__body {
+    height: 119px;
+    padding: 55px 25px 16px;
+    background: #fff;
+  }
+
+  #reviews .review-pair .review--stanislav {
+    --short-head-y: -34px;
+  }
+
+  #reviews .review-pair .review--stanislav .review__body {
+    height: 190px;
+    padding: 71px 25px 28px;
+    /* background: transparent; */
+  }
+
+  #reviews .review-pair .review__quote {
+    width: 84px;
+    height: 84px;
+  }
+
+  #reviews .review-pair .review__quote::before {
+    font-size: 202px;
   }
 }
